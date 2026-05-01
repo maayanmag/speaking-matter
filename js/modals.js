@@ -21,6 +21,8 @@ function openFromTarget(targetKey) {
     dialog.setAttribute('open', '');
   }
   // Reset scroll for the body each time
+  const inner = dialog.querySelector('.modal__inner');
+  if (inner) inner.scrollTop = 0;
   const body = dialog.querySelector('.modal__body');
   if (body) body.scrollTop = 0;
 }

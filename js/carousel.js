@@ -10,14 +10,22 @@ const DOT_SEL   = '[data-dot]';
 const PREV_SEL  = '[data-carousel-prev]';
 const NEXT_SEL  = '[data-carousel-next]';
 const NAV_SEL   = '[data-station-link]';
+const HINT_SEL  = '#carousel-swipe-hint';
 
-let track, prevBtn, nextBtn;
+let track, prevBtn, nextBtn, hint;
 let dots = [];
 let cards = [];
 let activeIdx = 0;
+let hintHidden = false;
 
 function isRTL() {
   return document.documentElement.dir === 'rtl';
+}
+
+function dismissHint() {
+  if (hintHidden || !hint) return;
+  hintHidden = true;
+  hint.classList.add('is-hidden');
 }
 
 function cardAt(idx) { return cards[idx]; }
@@ -36,6 +44,7 @@ function scrollToCard(idx, smooth = true) {
 }
 
 function setActive(idx) {
+  if (idx !== 0) dismissHint();
   activeIdx = idx;
   dots.forEach((d, i) => d.setAttribute('aria-current', i === idx ? 'true' : 'false'));
   if (prevBtn) prevBtn.disabled = idx === 0;
@@ -114,10 +123,16 @@ export function initCarousel() {
   if (!track) return;
   prevBtn = document.querySelector(PREV_SEL);
   nextBtn = document.querySelector(NEXT_SEL);
+  hint    = document.querySelector(HINT_SEL);
   dots    = Array.from(document.querySelectorAll(DOT_SEL));
   cards   = Array.from(track.querySelectorAll('.card'));
   if (!cards.length) return;
   setActive(0);
   bindControls();
   observeActive();
+  // Auto-dismiss hint after 8s if user hasn't interacted.
+  if (hint) setTimeout(dismissHint, 8000);
+  // Any direct scroll/touch on the track also dismisses the hint.
+  track.addEventListener('scroll', dismissHint, { passive: true, once: true });
+  track.addEventListener('touchstart', dismissHint, { passive: true, once: true });
 }

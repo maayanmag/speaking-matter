@@ -13,7 +13,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Frank+Ruhl+Libre:wght@400;500;700&family=Heebo:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500;6..72,600&family=JetBrains+Mono:wght@400;500&family=Frank+Ruhl+Libre:wght@400;500;700&family=Heebo:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="./css/reset.css" />
   <link rel="stylesheet" href="./css/tokens.css" />
@@ -38,11 +38,12 @@
     <a href="#hero" class="brand" data-i18n="meta.site_title">Speaking Matter</a>
 
     <nav class="site-nav" aria-label="Primary">
-      <a href="#station-1" data-station-link="0" data-i18n="nav.touch">Touch</a>
-      <a href="#station-2" data-station-link="1" data-i18n="nav.code">Code</a>
-      <a href="#station-3" data-station-link="2" data-i18n="nav.vault">Vault</a>
-      <a href="#station-4" data-station-link="3" data-i18n="nav.fictions">Fictions</a>
-      <a href="#station-5" data-i18n="nav.documentation">Documentation</a>
+      <a href="#station-1" data-station-link="0" data-i18n="nav.touch">Stamps</a>
+      <a href="#station-2" data-station-link="1" data-i18n="nav.reliefs">Reliefs</a>
+      <a href="#station-3" data-station-link="2" data-i18n="nav.code">Code</a>
+      <a href="#station-4" data-station-link="3" data-i18n="nav.vault">Vault</a>
+      <a href="#station-5" data-station-link="4" data-i18n="nav.fictions">Fictions</a>
+      <a href="#station-6" data-i18n="nav.documentation">Documentation</a>
     </nav>
 
     <div class="lang-toggle" role="group" aria-label="Language">
@@ -78,32 +79,59 @@
       </div>
     </section>
 
-    <!-- ─── STATIONS CAROUSEL (1–4) ───────────────────────── -->
+    <!-- ─── STATIONS CAROUSEL (1–5) ───────────────────────── -->
     <section class="stations" aria-label="Stations">
       <div class="stations__controls">
         <button type="button" class="carousel-btn carousel-prev" aria-label="Previous station" data-carousel-prev>
-          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M15 4l-8 8 8 8" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M15 4l-8 8 8 8" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+          <span class="carousel-btn__label" data-i18n="ui.prev_label">Previous</span>
         </button>
         <ol class="carousel-dots" id="carousel-dots" role="tablist">
-          <li role="presentation"><button role="tab" type="button" data-dot="0" aria-current="true">01</button></li>
-          <li role="presentation"><button role="tab" type="button" data-dot="1">02</button></li>
-          <li role="presentation"><button role="tab" type="button" data-dot="2">03</button></li>
-          <li role="presentation"><button role="tab" type="button" data-dot="3">04</button></li>
+          <li role="presentation"><button role="tab" type="button" data-dot="0" aria-current="true"><span class="dot-num">01</span><span class="dot-label" data-i18n="nav.touch">Stamps</span></button></li>
+          <li role="presentation"><button role="tab" type="button" data-dot="1"><span class="dot-num">02</span><span class="dot-label" data-i18n="nav.reliefs">Reliefs</span></button></li>
+          <li role="presentation"><button role="tab" type="button" data-dot="2"><span class="dot-num">03</span><span class="dot-label" data-i18n="nav.code">Code</span></button></li>
+          <li role="presentation"><button role="tab" type="button" data-dot="3"><span class="dot-num">04</span><span class="dot-label" data-i18n="nav.vault">Vault</span></button></li>
+          <li role="presentation"><button role="tab" type="button" data-dot="4"><span class="dot-num">05</span><span class="dot-label" data-i18n="nav.fictions">Fictions</span></button></li>
         </ol>
         <button type="button" class="carousel-btn carousel-next" aria-label="Next station" data-carousel-next>
-          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 4l8 8-8 8" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          <span class="carousel-btn__label" data-i18n="ui.next_label">Next</span>
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9 4l8 8-8 8" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
         </button>
       </div>
+      <p class="carousel-swipe-hint" id="carousel-swipe-hint" data-i18n="ui.swipe_hint">Swipe or use ◀ ▶ to move between stations</p>
 
       <div class="stations__track" id="stations-track" role="tabpanel" tabindex="0">
 
-        <!-- Card 1 — Touch -->
+        <!-- Card 1 — Stamps -->
         <article class="card" id="station-1" data-card-idx="0">
           <div class="card__text">
-            <p class="station__eyebrow" data-i18n="stations.station-1.eyebrow">Station 01 / The Physical Touch</p>
+            <p class="station__eyebrow" data-i18n="stations.station-1.eyebrow">Station 01 / Local Signature</p>
             <h2 class="station__title" data-i18n="stations.station-1.title">Stamps press into clay.</h2>
             <p class="card__lead" data-i18n="stations.station-1.label">A stone becomes a seal.</p>
             <button type="button" class="read-more" data-open-modal="station-1">
+              <span data-i18n="ui.read_more">Read more</span>
+              <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+            </button>
+          </div>
+          <div class="card__media">
+            <picture class="media-frame">
+              <source srcset="./assets/photos/s1-best-stamps.webp" type="image/webp" />
+              <img src="./assets/photos/s1-best-stamps.jpg" alt="Positive stamps on the pedestal" loading="lazy" />
+            </picture>
+            <picture class="media-frame">
+              <source srcset="./assets/photos/s1-finger-on-stamp.webp" type="image/webp" />
+              <img src="./assets/photos/s1-finger-on-stamp.jpg" alt="Finger pressing a stamp into clay" loading="lazy" />
+            </picture>
+          </div>
+        </article>
+
+        <!-- Card 2 — Reliefs (NEW) -->
+        <article class="card" id="station-2" data-card-idx="1">
+          <div class="card__text">
+            <p class="station__eyebrow" data-i18n="stations.station-2.eyebrow">Station 02 / Surface Unfolded</p>
+            <h2 class="station__title" data-i18n="stations.station-2.title">Stone skin, laid flat.</h2>
+            <p class="card__lead" data-i18n="stations.station-2.label">A topographic confession.</p>
+            <button type="button" class="read-more" data-open-modal="station-2">
               <span data-i18n="ui.read_more">Read more</span>
               <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
             </button>
@@ -117,19 +145,19 @@
               </video>
             </div>
             <picture class="media-frame">
-              <source srcset="./assets/photos/s1-positive-focus.webp" type="image/webp" />
-              <img src="./assets/photos/s1-positive-focus.jpg" alt="Positive stamps, close-up" loading="lazy" />
+              <source srcset="./assets/photos/s2-relief-good.webp" type="image/webp" />
+              <img src="./assets/photos/s2-relief-good.jpg" alt="Printed relief tile" loading="lazy" />
             </picture>
           </div>
         </article>
 
-        <!-- Card 2 — Code -->
-        <article class="card" id="station-2" data-card-idx="1">
+        <!-- Card 3 — Stone Code -->
+        <article class="card" id="station-3" data-card-idx="2">
           <div class="card__text">
-            <p class="station__eyebrow" data-i18n="stations.station-2.eyebrow">Station 02 / Digital Anatomy</p>
-            <h2 class="station__title" data-i18n="stations.station-2.title">Surface becomes signal.</h2>
-            <p class="card__lead" data-i18n="stations.station-2.label">A stone becomes data.</p>
-            <button type="button" class="read-more" data-open-modal="station-2">
+            <p class="station__eyebrow" data-i18n="stations.station-3.eyebrow">Station 03 / Digital Anatomy</p>
+            <h2 class="station__title" data-i18n="stations.station-3.title">Surface becomes signal.</h2>
+            <p class="card__lead" data-i18n="stations.station-3.label">A stone becomes data.</p>
+            <button type="button" class="read-more" data-open-modal="station-3">
               <span data-i18n="ui.read_more">Read more</span>
               <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
             </button>
@@ -154,13 +182,13 @@
           </div>
         </article>
 
-        <!-- Card 3 — Vault -->
-        <article class="card" id="station-3" data-card-idx="2">
+        <!-- Card 4 — Stone Vault -->
+        <article class="card" id="station-4" data-card-idx="3">
           <div class="card__text">
-            <p class="station__eyebrow" data-i18n="stations.station-3.eyebrow">Station 03 / Geological Cryptography</p>
-            <h2 class="station__title" data-i18n="stations.station-3.title">Encrypt with a stone.</h2>
-            <p class="card__lead" data-i18n="stations.station-3.label">A stone becomes a key.</p>
-            <button type="button" class="read-more" data-open-modal="station-3">
+            <p class="station__eyebrow" data-i18n="stations.station-4.eyebrow">Station 04 / Geological Cryptography</p>
+            <h2 class="station__title" data-i18n="stations.station-4.title">Encrypt with a stone.</h2>
+            <p class="card__lead" data-i18n="stations.station-4.label">A stone becomes a key.</p>
+            <button type="button" class="read-more" data-open-modal="station-4">
               <span data-i18n="ui.read_more">Read more</span>
               <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
             </button>
@@ -185,13 +213,13 @@
           </div>
         </article>
 
-        <!-- Card 4 — Fictions (3D viewer) -->
-        <article class="card card--viewer" id="station-4" data-card-idx="3">
+        <!-- Card 5 — Possible Stones (3D viewer) -->
+        <article class="card card--viewer" id="station-5" data-card-idx="4">
           <div class="card__text">
-            <p class="station__eyebrow" data-i18n="stations.station-4.eyebrow">Station 04 / Geological Fictions</p>
-            <h2 class="station__title" data-i18n="stations.station-4.title">Stones that never were.</h2>
-            <p class="card__lead" data-i18n="stations.station-4.label">A stone becomes a fiction.</p>
-            <button type="button" class="read-more" data-open-modal="station-4">
+            <p class="station__eyebrow" data-i18n="stations.station-5.eyebrow">Station 05 / Geological Fictions</p>
+            <h2 class="station__title" data-i18n="stations.station-5.title">Stones that never were.</h2>
+            <p class="card__lead" data-i18n="stations.station-5.label">A stone becomes a fiction.</p>
+            <button type="button" class="read-more" data-open-modal="station-5">
               <span data-i18n="ui.read_more">Read more</span>
               <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
             </button>
@@ -212,10 +240,10 @@
       </div>
     </section>
 
-    <!-- ─── STATION 5 — Installation Documentation ───────── -->
-    <section class="station station--documentation" id="station-5" aria-labelledby="station-5-title">
-      <p class="station__eyebrow station__eyebrow--centered" data-i18n="stations.station-5.eyebrow">Station 05 / Installation Documentation</p>
-      <h2 class="station__title station__title--centered" id="station-5-title" data-i18n="stations.station-5.title">The installation.</h2>
+    <!-- ─── STATION 6 — Installation Documentation ───────── -->
+    <section class="station station--documentation" id="station-6" aria-labelledby="station-6-title">
+      <p class="station__eyebrow station__eyebrow--centered" data-i18n="stations.station-6.eyebrow">Station 06 / Installation Documentation</p>
+      <h2 class="station__title station__title--centered" id="station-6-title" data-i18n="stations.station-6.title">The installation.</h2>
       <hr class="rule" />
       <div class="photo-grid" id="photo-grid" aria-label="Installation documentation photographs"></div>
     </section>
@@ -256,7 +284,7 @@
     <div class="modal__inner">
       <header class="modal__head">
         <p class="station__eyebrow" data-i18n="stations.station-2.eyebrow">Station 02</p>
-        <h2 class="station__title" id="modal-2-title" data-i18n="stations.station-2.title">Surface becomes signal.</h2>
+        <h2 class="station__title" id="modal-2-title" data-i18n="stations.station-2.title">Stone skin, laid flat.</h2>
         <button type="button" class="modal__close" aria-label="Close" data-close-modal>×</button>
       </header>
       <div class="modal__body prose" data-i18n="stations.station-2.body" data-i18n-html="true"></div>
@@ -268,7 +296,7 @@
     <div class="modal__inner">
       <header class="modal__head">
         <p class="station__eyebrow" data-i18n="stations.station-3.eyebrow">Station 03</p>
-        <h2 class="station__title" id="modal-3-title" data-i18n="stations.station-3.title">Encrypt with a stone.</h2>
+        <h2 class="station__title" id="modal-3-title" data-i18n="stations.station-3.title">Surface becomes signal.</h2>
         <button type="button" class="modal__close" aria-label="Close" data-close-modal>×</button>
       </header>
       <div class="modal__body prose" data-i18n="stations.station-3.body" data-i18n-html="true"></div>
@@ -280,11 +308,23 @@
     <div class="modal__inner">
       <header class="modal__head">
         <p class="station__eyebrow" data-i18n="stations.station-4.eyebrow">Station 04</p>
-        <h2 class="station__title" id="modal-4-title" data-i18n="stations.station-4.title">Stones that never were.</h2>
+        <h2 class="station__title" id="modal-4-title" data-i18n="stations.station-4.title">Encrypt with a stone.</h2>
         <button type="button" class="modal__close" aria-label="Close" data-close-modal>×</button>
       </header>
       <div class="modal__body prose" data-i18n="stations.station-4.body" data-i18n-html="true"></div>
       <p class="station__label" data-i18n="stations.station-4.label"></p>
+    </div>
+  </dialog>
+
+  <dialog class="modal" id="modal-station-5" aria-labelledby="modal-5-title">
+    <div class="modal__inner">
+      <header class="modal__head">
+        <p class="station__eyebrow" data-i18n="stations.station-5.eyebrow">Station 05</p>
+        <h2 class="station__title" id="modal-5-title" data-i18n="stations.station-5.title">Stones that never were.</h2>
+        <button type="button" class="modal__close" aria-label="Close" data-close-modal>×</button>
+      </header>
+      <div class="modal__body prose" data-i18n="stations.station-5.body" data-i18n-html="true"></div>
+      <p class="station__label" data-i18n="stations.station-5.label"></p>
     </div>
   </dialog>
 

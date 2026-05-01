@@ -7,7 +7,7 @@ const MANIFEST_URL = './assets/photos/manifest.json';
 const TARGET = '#photo-grid';
 // Stations to surface in the documentation grid (skip 'hero' + per-station inline photos).
 const ALLOWED_STATIONS = new Set([
-  'station-1', 'station-2', 'station-3', 'station-4', 'documentation',
+  'station-1', 'station-2', 'station-3', 'station-4', 'station-5', 'documentation',
 ]);
 
 function figureMarkup(entry) {

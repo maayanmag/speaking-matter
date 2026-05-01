@@ -21,9 +21,16 @@
   --c-danger:        #c8543a;    /* dramatic delete / destruction */
 
   /* ─── Type ─── */
+  /* Sans (titles, UI, buttons) — kept Inter, user said titles are great. */
   --f-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  /* Serif (body prose) — Newsreader, a contemporary text serif designed for
+   * digital reading. Pairs cleanly with Inter and brings the warmth of an
+   * exhibition catalogue without the weight of a classical book serif. */
+  --f-serif:    'Newsreader', 'Source Serif 4', 'Georgia', serif;
   --f-mono: 'JetBrains Mono', 'SF Mono', 'Menlo', 'Consolas', monospace;
-  --f-serif-he: 'Frank Ruhl Libre', 'Heebo', 'David', serif;
+  /* Hebrew — Frank Ruhl Libre (Yanek Iontef) is the closest free counterpart
+   * to the "Abraham" feel: humanist, calligraphic, exhibition-grade. */
+  --f-serif-he: 'Frank Ruhl Libre', 'David', 'Heebo', serif;
   --f-sans-he:  'Heebo', 'Frank Ruhl Libre', system-ui, sans-serif;
 
   /* Modular type scale — base 18px, ratio 1.25 */
@@ -81,6 +88,8 @@
 
 html { background: var(--c-bg); color: var(--c-fg); }
 
+/* English body prose uses Newsreader serif for warmth + readability.
+ * Headings/buttons/UI chrome stay sans (Inter). */
 body {
   font-family: var(--f-sans);
   font-size: var(--t-base);
@@ -88,6 +97,17 @@ body {
   letter-spacing: var(--tracking-normal);
   background: var(--c-bg);
   color: var(--c-fg);
+}
+:root.lang-en .prose,
+:root.lang-en .station__label,
+:root.lang-en .hero__sub,
+:root.lang-en .card__lead,
+:root.lang-en .modal__body,
+:root.lang-en .site-footer p {
+  font-family: var(--f-serif);
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: -0.005em;
 }
 
 /* Code, hex, ciphertext */
@@ -107,6 +127,8 @@ code, pre, .mono { font-family: var(--f-mono); }
 :root.lang-he .prose-he,
 :root.lang-he .station__label,
 :root.lang-he .hero__sub,
+:root.lang-he .card__lead,
+:root.lang-he .modal__body,
 :root.lang-he .site-footer p {
   font-family: var(--f-serif-he);
   line-height: 1.85;

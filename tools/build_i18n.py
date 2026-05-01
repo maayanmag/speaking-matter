@@ -56,18 +56,20 @@ EN_DIR = TEXTS_DIR / "english_translations"
 # We split each MD into "body" (the H2-led prose) and "label" (the
 # trailing 50-word gallery label).
 EN_FILES = {
-    "02_Local_Signature.md":         "station-1",
-    "04_Stone_Code.md":              "station-2",
-    "03_Geological_Cryptography.md": "station-3",
-    "01_Possible_Stones.md":         "station-4",
+    "02_Local_Signature.md":         "station-1",  # stamps
+    "05_Relief_Tiles.md":            "station-2",  # reliefs (NEW)
+    "04_Stone_Code.md":              "station-3",  # stone code
+    "03_Geological_Cryptography.md": "station-4",  # vault
+    "01_Possible_Stones.md":         "station-5",  # possible stones / fictions
 }
 
 # Optional Hebrew docx → matching key path
 HE_FILES = {
     "חותמות.docx":         "station-1",  # stamps
-    "קוד האבן.docx":         "station-2",  # stone code
-    "כספת האבן.docx":        "station-3",  # vault
-    "אבנים אפשריות.docx":    "station-4",  # possible stones
+    "תבליטים.docx":         "station-2",  # reliefs
+    "קוד האבן.docx":         "station-3",  # stone code
+    "כספת האבן.docx":        "station-4",  # vault
+    "אבנים אפשריות.docx":    "station-5",  # possible stones
 }
 
 # ─── Static UI strings (per locale) ───────────────────────────────────
@@ -78,7 +80,8 @@ STATIC = {
             "tagline": "A digital twin of the physical exhibition — stones, scans, and cryptography.",
         },
         "nav": {
-            "touch": "Touch",
+            "touch": "Stamps",
+            "reliefs": "Reliefs",
             "code": "Code",
             "vault": "Vault",
             "fictions": "Fictions",
@@ -90,32 +93,39 @@ STATIC = {
         "ui": {
             "read_more": "Read more",
             "zoom_hint": "Click to zoom",
+            "swipe_hint": "Swipe or use ◀ ▶ to move between stations",
+            "prev_label": "Previous",
+            "next_label": "Next",
         },
         "hero": {
             "eyebrow": "Bezalel Academy · M.Des Industrial Design · 2026",
             "title": "Speaking Matter",
-            "sub": "A digital twin of the physical exhibition. The visitor moves through four stations — touch, code, vault, fiction — and watches matter transform into data, and back.",
+            "sub": "A digital twin of the physical exhibition. The visitor moves through five stations — stamps, reliefs, code, vault, fiction — and watches matter transform into data, and back.",
             "scroll_hint": "Scroll",
         },
         "stations": {
             "station-1": {
-                "eyebrow": "Station 01 / The Physical Touch",
+                "eyebrow": "Station 01 / Local Signature",
                 "title": "Stamps press into clay.",
             },
             "station-2": {
-                "eyebrow": "Station 02 / Digital Anatomy",
-                "title": "Surface becomes signal.",
+                "eyebrow": "Station 02 / Surface Unfolded",
+                "title": "Stone skin, laid flat.",
             },
             "station-3": {
-                "eyebrow": "Station 03 / Geological Cryptography",
-                "title": "Encrypt with a stone.",
+                "eyebrow": "Station 03 / Digital Anatomy",
+                "title": "Surface becomes signal.",
             },
             "station-4": {
-                "eyebrow": "Station 04 / Geological Fictions",
-                "title": "Stones that never were.",
+                "eyebrow": "Station 04 / Geological Cryptography",
+                "title": "Encrypt with a stone.",
             },
             "station-5": {
-                "eyebrow": "Station 05 / Installation Documentation",
+                "eyebrow": "Station 05 / Geological Fictions",
+                "title": "Stones that never were.",
+            },
+            "station-6": {
+                "eyebrow": "Station 06 / Installation Documentation",
                 "title": "The installation.",
             },
         },
@@ -133,7 +143,8 @@ STATIC = {
             "tagline": "תאום דיגיטלי לתערוכה הפיזית — אבנים, סריקה והצפנה.",
         },
         "nav": {
-            "touch": "מגע",
+            "touch": "חותמות",
+            "reliefs": "תבליטים",
             "code": "קוד",
             "vault": "כספת",
             "fictions": "פיקציות",
@@ -145,32 +156,44 @@ STATIC = {
         "ui": {
             "read_more": "קרא/י עוד",
             "zoom_hint": "להגדלה — לחיצה",
+            "swipe_hint": "החלק/י או השתמש/י ב‑◀ ▶ למעבר בין התחנות",
+            "prev_label": "הקודמת",
+            "next_label": "הבאה",
         },
         "hero": {
             "eyebrow": "האקדמיה לאמנות ועיצוב בצלאל · M.Des עיצוב תעשייתי · 2026",
             "title": "דומם מדבר",
-            "sub": "תאום דיגיטלי לתערוכה הפיזית. המבקר/ת עובר/ת דרך ארבע תחנות — מגע, קוד, כספת, פיקציה — ורואה כיצד החומר הופך לנתונים וחזרה.",
+            "sub": "תאום דיגיטלי לתערוכה הפיזית. המבקר/ת עובר/ת דרך חמש תחנות — חותמות, תבליטים, קוד, כספת, פיקציה — ורואה כיצד החומר הופך לנתונים וחזרה.",
             "scroll_hint": "גלילה",
         },
         "stations": {
             "station-1": {
-                "eyebrow": "תחנה 01 / המגע הפיזי",
-                "title": "החותמות והתבליטים",
+                "eyebrow": "תחנה 01 / חתימה מקומית",
+                "title": "החותמות",
+                "label": "האבן הופכת לחותמת. בלחיצה אל החמר היא יוצרת תיעוד פיזי של חתימה גיאולוגית מקומית — מפגש בין זמן גיאולוגי עתיק לבין רגע אנושי שטרם התקשה.",
             },
             "station-2": {
-                "eyebrow": "תחנה 02 / אנטומיה דיגיטלית",
-                "title": "קוד האבן",
+                "eyebrow": "תחנה 02 / משטח שנפרש",
+                "title": "התבליטים",
+                "label": "עורה של אבן נפרש אל משטח שטוח. מפת גובה דיגיטלית הופכת לתבליט נגיש למגע — וידוי טופוגרפי של כל גרגר, כל בליה, כל זמן.",
             },
             "station-3": {
-                "eyebrow": "תחנה 03 / קריפטוגרפיה גיאולוגית",
-                "title": "כספת האבן",
+                "eyebrow": "תחנה 03 / אנטומיה דיגיטלית",
+                "title": "קוד האבן",
+                "label": "כשמכריחים את האבן לדבר בהקסדצימלי. כל ערך טופוגרפי הופך לבית, והמשטח הופך לרצף סימנים — האבן הופכת לקריאה ומאבדת את משמעותה בו זמנית.",
             },
             "station-4": {
-                "eyebrow": "תחנה 04 / פיקציות גיאולוגיות",
-                "title": "אבנים אפשריות",
+                "eyebrow": "תחנה 04 / קריפטוגרפיה גיאולוגית",
+                "title": "כספת האבן",
+                "label": "האבן ככספת. הטופוגרפיה המקרית של פני השטח, שנפסלה במשך מיליוני שנים, הופכת למפתח קריפטוגרפי. רק האבן עצמה תוכל לפתוח את ההודעה שננעלה בה.",
             },
             "station-5": {
-                "eyebrow": "תחנה 05 / תיעוד התערוכה",
+                "eyebrow": "תחנה 05 / פיקציות גיאולוגיות",
+                "title": "אבנים אפשריות",
+                "label": "כשאבן לובשת את עורה של אחרת — מה נשאר מזהותה? אבנים אפשריות חוקרת את הגבול בין צורה למשטח, בין גיאולוגיה לפיקציה, ושואלת אם אבן יכולה לשאת זיכרון של מקום שאליו לא הגיעה.",
+            },
+            "station-6": {
+                "eyebrow": "תחנה 06 / תיעוד התערוכה",
                 "title": "התערוכה",
             },
         },
