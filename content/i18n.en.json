@@ -1,0 +1,59 @@
+{
+  "meta": {
+    "site_title": "Speaking Matter",
+    "tagline": "A digital twin of the physical exhibition — stones, scans, and cryptography."
+  },
+  "nav": {
+    "touch": "Touch",
+    "code": "Code",
+    "vault": "Vault",
+    "fictions": "Fictions",
+    "documentation": "Documentation"
+  },
+  "a11y": {
+    "skip": "Skip to content"
+  },
+  "hero": {
+    "eyebrow": "Bezalel Academy · M.Des Industrial Design · 2026",
+    "title": "Speaking Matter",
+    "sub": "A digital twin of the physical exhibition. The visitor moves through four stations — touch, code, vault, fiction — and watches matter transform into data, and back.",
+    "scroll_hint": "Scroll"
+  },
+  "stations": {
+    "station-1": {
+      "eyebrow": "Station 01 / The Physical Touch",
+      "title": "Stamps press into clay.",
+      "body": "<h2>The Gesture</h2>\n<p>When a hand grasps a stone and presses it into soft clay, it repeats an ancient gesture of witness.</p>\n<p>The stone's three-dimensional scan becomes a <strong>stamp</strong> — a personal claim on the place where it rests. Here the stamp itself carries a notarial signature: the unique gesture of a hand, unique style, transmitted through the stone's local topography — its own partial, intimate geography.</p>\n<h2>From Data to Tool</h2>\n<p>To translate raw surface into active tool:</p>\n<ol>\n<li>Stones gathered from different places across the land were <strong>scanned in three dimensions</strong></li>\n<li>The digital model underwent <strong>voxelization</strong> (volume discretization)</li>\n<li><strong>Precise cutting</strong> of the relief layer</li>\n<li><strong>Boolean union</strong> with a grip handle for the human hand</li>\n<li>Finally <strong>printed in three-D</strong></li>\n</ol>\n<p>The result is a stamp that preserves in its head the original stone's topography to <strong>millimeter accuracy</strong> — every grain, every scratch, every geological wrinkle.</p>\n<h2>Positive and Negative</h2>\n<p>Two kinds of objects were created:</p>\n<p><strong>Positive Stamp:</strong> Where the stone's relief projects outward, asserting the stone itself. When pressed to clay, it <em>leaves</em> its mark — the stone's presence made visible.</p>\n<p><strong>Negative Stamp:</strong> The inverse pattern — a void pressed within a cylinder, into which clay sinks. It <em>receives</em> the impression, completing a circuit. The positive carries the stone's presence; the negative receives its absence.</p>\n<p>Together, they complete a circle of <strong>impression and imprint</strong>, like seal and wax.</p>\n<h2>The Meeting</h2>\n<p>When the stamp presses into natural clay, two geological times meet:</p>\n<ul>\n<li>Stone formed millions of years ago</li>\n<li>Soft clay receiving its signature in this moment</li>\n</ul>\n<p>Through the act of stamping, the person claims identity through the local stone. The mute makes itself heard through the speaker, and leaves in the world a <strong>physical fingerprint of place</strong>.</p>",
+      "label": "A stone becomes a seal. When stamped into clay, it bridges geological time — ancient rock meets receptive earth. These stamps transform a place's unique geology into a gesture of ownership, a notarized signature written in texture and time."
+    },
+    "station-2": {
+      "eyebrow": "Station 02 / Digital Anatomy",
+      "title": "Surface becomes signal.",
+      "body": "<h2>The Translation</h2>\n<p>When a computer reads a stone, it sees no shape, no color, no story.</p>\n<p>It sees <strong>numbers</strong>.</p>\n<h2>The Data</h2>\n<p>The elevation map from the stone's scan is a matrix of topographic measurements — thousands of samples from surface, from <strong>0</strong> (valley) to <strong>1</strong> (peak). This is the raw language of geology: pure topology, unmediated.</p>\n<p>In <em>Stone Code</em>, this matrix is flattened into a continuous stream of <strong>bytes</strong> and displayed as a dense table, like a <strong>Hex Editor</strong> reading raw computer memory. Each row exposes <strong>48 bytes</strong> of data, organized across four parallel dimensions:</p>\n<h3>Four Readings</h3>\n<p><strong>OFFSET</strong>\nThe precise position of the point in the overall data sequence. A coordinate in the stone's numerical body.</p>\n<p><strong>HEX VALUES</strong><br />\nThe data itself. Each byte appears as a pair of hexadecimal digits, colored in green. The intensity of the green derives from physical height:\n- Peaks glow <strong>bright green</strong>\n- Valleys sink into <strong>darkness</strong></p>\n<p>The color is not arbitrary: it is the stone's own height rendered as light.</p>\n<p><strong>DECODED</strong><br />\nThe numeric values forced into translation as characters: Greek letters, mathematical symbols, graphic blocks. Dense rows create a kind of <strong>cybernetic cuneiform</strong> — a language derived <em>only</em> from topography. The stone speaks in symbols it never meant to speak.</p>\n<p><strong>BITS</strong><br />\nThe binary checksum of the row (XOR), shown as a sequence of lit and dark blocks. A heartbeat. A pulse. A rhythm encoded in the stone's data.</p>\n<h3>The Header</h3>\n<p>At the screen's head floats metadata header: raw material facts —</p>\n<ul>\n<li>Vertex count</li>\n<li>Elevation range</li>\n<li>Entropy measure</li>\n<li><strong>SHA-256 hash</strong> — the stone's cryptographic fingerprint</li>\n</ul>\n<p>Change one byte, the cipher shifts entirely. The stone's identity is compressed into a single string.</p>\n<h2>The Reading</h2>\n<p>The resulting image reads like a <strong>classified document</strong>, like a <strong>terminal screen</strong>, like <strong>ancient text decoded</strong> — yet all it displays is raw stone surface data.</p>\n<p>The mute speaks, just not in our language.</p>\n<p>But perhaps in reading this code, we finally listen — not to stone's voice, but to its signature, its proof of existence rendered in the only language the machine will accept.</p>",
+      "label": "What happens when we force stone to speak in hexadecimal? Stone Code displays the raw topographic data of a scanned rock as a dense terminal output — cryptographic hashes, color-coded heights, binary pulses. The stone becomes readable, but at the cost of all meaning."
+    },
+    "station-3": {
+      "eyebrow": "Station 03 / Geological Cryptography",
+      "title": "Encrypt with a stone.",
+      "body": "<h2>The Premise</h2>\n<p>Can a stone keep a secret?</p>\n<p>The elevation map of each scanned stone is a field of <strong>random values</strong> — natural entropy created across millions of years of geological process. This randomness is not noise; it is <em>data</em>, as specific and unique as a fingerprint.</p>\n<p><em>Geological Cryptography</em> harnesses this randomness to generate a <strong>unique encryption key: 256 bits</strong> derived <em>only</em> from one stone's specific topography.</p>\n<h2>The Process</h2>\n<p><strong>Step 1: Sampling</strong>\nThe elevation map is sampled and converted to binary sequence — thousands of height measurements flattened into a stream of 1s and 0s.</p>\n<p><strong>Step 2: Error Correction</strong>\nRescanning the same stone is never perfectly identical due to differences in light, angle, and resolution. A \"<strong>fuzzy extractor</strong>\" algorithm is applied — it generates public helper data that allows reconstruction of the exact same key even from a slightly different scan.</p>\n<p><em>The helper data are safe to publish:</em> they are worthless without the physical stone itself.</p>\n<p><strong>Step 3: Encryption</strong>\nThe key feeds into <strong>AES-256 encryption</strong> — the same standard protecting banking records and classified intelligence. The stone becomes a cryptographic anchor.</p>\n<h2>The Application</h2>\n<p>In the <em>Stone Vault</em> app:</p>\n<ol>\n<li>User selects a physical stone</li>\n<li>User enters a message</li>\n<li>The stone encrypts it using its unique geological key</li>\n<li>Only whoever holds that specific stone can decrypt</li>\n</ol>\n<p>The geological material becomes cryptographic <strong>material</strong>. The mute becomes the <strong>keeper of secrets</strong>.</p>\n<h2>The Paradox</h2>\n<p>A stone that has held silent for millions of years now holds silence of another kind: secrets locked within its surface. The encryption is not imposed from outside — it <em>emerges</em> from the stone's own history. You cannot fake it. You cannot duplicate it. The stone, in its opacity, becomes transparent to mathematics.</p>",
+      "label": "Stone as vault. The random topography of a rock surface, sculpted over millions of years, encodes a cryptographic key. Messages entrusted to this stone can only be unlocked by the stone itself — making geology the guardian of secrets."
+    },
+    "station-4": {
+      "eyebrow": "Station 04 / Geological Fictions",
+      "title": "Stones that never were.",
+      "body": "<h2>The Question</h2>\n<p>What happens when a limestone from the Galilee wears the skin of basalt from the Golan? When Jerusalem stone dresses in the texture of coastal kurkar?</p>\n<p>This station explores a question: What <em>is</em> a stone's identity — its form or its surface? Its body or its skin?</p>\n<h2>The Premise</h2>\n<p>Each three-dimensionally scanned stone is a duality: <strong>geometry</strong> (the volumetric shape) and <strong>texture</strong> (the image wrapping that volume). In an act of \"skin-swapping,\" one stone's surface is UV-mapped onto another stone's skeleton. One body, borrowed skin.</p>\n<p>But surface exchange is only the beginning.</p>\n<h2>The Process</h2>\n<p>These hybrid forms undergo three layers of algorithmic distortion:</p>\n<ol>\n<li><strong>Geometric warping</strong> — subtle twists and bends</li>\n<li><strong>Fractal noise</strong> — perturbation along the surface normal</li>\n<li><strong>Perlin noise</strong> — creating micro-texture at the smallest scale</li>\n</ol>\n<p>The skin stretches and deforms with the geometry, like flesh on a body in flux. Texture and form become inseparable, as if the borrowed surface has learned to inhabit the new host.</p>\n<h2>The Result</h2>\n<p><em>Possible stones</em> — forms carrying the visual memory of two real stones, yet whose bodies have wandered into impossible territory. </p>\n<p>A geological fiction: stones that <em>could</em> have formed, but never did. Expression of drift, blurred boundaries, and the mixing of local identities. These are the stones that exist only in the space between two places, wearing two names.</p>",
+      "label": "When a stone wears another's skin, what remains of its identity? Possible Stones explores the boundary between form and surface, geology and fiction. By swapping textures between stones from different landscapes, we ask: can a stone carry the memory of a place it never came from?"
+    },
+    "station-5": {
+      "eyebrow": "Station 05 / Exhibition Documentation",
+      "title": "The room itself."
+    }
+  },
+  "footer": {
+    "tagline": "A graduation project investigating the translation of geological matter into computational form. Bezalel Academy of Arts and Design, M.Des Industrial Design, 2026.",
+    "credits_title": "Credits",
+    "credits": "Photography:<br />Inbar Zak, Omer Devora",
+    "code_title": "Code",
+    "colophon": "© 2026 Maayan Magenheim · built with stones, code, and a lot of clay"
+  }
+}

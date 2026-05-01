@@ -1,0 +1,122 @@
+[
+  {
+    "id": "hero-installation",
+    "jpg": "./assets/photos/hero-installation.jpg",
+    "webp": "./assets/photos/hero-installation.webp",
+    "station": "hero",
+    "caption": "Installation, wide view",
+    "credit": "Inbar Zak"
+  },
+  {
+    "id": "hero-stamps-stand",
+    "jpg": "./assets/photos/hero-stamps-stand.jpg",
+    "webp": "./assets/photos/hero-stamps-stand.webp",
+    "station": "hero",
+    "caption": "Stamps pedestal",
+    "credit": "Inbar Zak"
+  },
+  {
+    "id": "s1-finger-on-stamp",
+    "jpg": "./assets/photos/s1-finger-on-stamp.jpg",
+    "webp": "./assets/photos/s1-finger-on-stamp.webp",
+    "station": "station-1",
+    "caption": "Finger on stamp, clay",
+    "credit": "Inbar Zak"
+  },
+  {
+    "id": "s1-stamps-closeup",
+    "jpg": "./assets/photos/s1-stamps-closeup.jpg",
+    "webp": "./assets/photos/s1-stamps-closeup.webp",
+    "station": "station-1",
+    "caption": "Stamps, close-up",
+    "credit": "Omer Devora"
+  },
+  {
+    "id": "s1-hand-on-relief",
+    "jpg": "./assets/photos/s1-hand-on-relief.jpg",
+    "webp": "./assets/photos/s1-hand-on-relief.webp",
+    "station": "station-1",
+    "caption": "Hand on relief",
+    "credit": "Inbar Zak"
+  },
+  {
+    "id": "s1-relief-good",
+    "jpg": "./assets/photos/s1-relief-good.jpg",
+    "webp": "./assets/photos/s1-relief-good.webp",
+    "station": "station-1",
+    "caption": "Relief tile",
+    "credit": "Omer Devora"
+  },
+  {
+    "id": "s2-code-on-wall",
+    "jpg": "./assets/photos/s2-code-on-wall.jpg",
+    "webp": "./assets/photos/s2-code-on-wall.webp",
+    "station": "station-2",
+    "caption": "Stone Code projected on wall",
+    "credit": "Inbar Zak"
+  },
+  {
+    "id": "s2-code-people-around",
+    "jpg": "./assets/photos/s2-code-people-around.jpg",
+    "webp": "./assets/photos/s2-code-people-around.webp",
+    "station": "station-2",
+    "caption": "Visitors, Stone Code wall",
+    "credit": "Inbar Zak"
+  },
+  {
+    "id": "s3-encryption-presenting",
+    "jpg": "./assets/photos/s3-encryption-presenting.jpg",
+    "webp": "./assets/photos/s3-encryption-presenting.webp",
+    "station": "station-3",
+    "caption": "Demonstrating Stone Vault",
+    "credit": "Inbar Zak"
+  },
+  {
+    "id": "s3-encryption-app",
+    "jpg": "./assets/photos/s3-encryption-app.jpg",
+    "webp": "./assets/photos/s3-encryption-app.webp",
+    "station": "station-3",
+    "caption": "Stone Vault interface",
+    "credit": "Omer Devora"
+  },
+  {
+    "id": "s3-encryption-sign",
+    "jpg": "./assets/photos/s3-encryption-sign.jpg",
+    "webp": "./assets/photos/s3-encryption-sign.webp",
+    "station": "station-3",
+    "caption": "Vault signage",
+    "credit": "Omer Devora"
+  },
+  {
+    "id": "s4-possible-stones",
+    "jpg": "./assets/photos/s4-possible-stones.jpg",
+    "webp": "./assets/photos/s4-possible-stones.webp",
+    "station": "station-4",
+    "caption": "Possible Stones, wide",
+    "credit": "Inbar Zak"
+  },
+  {
+    "id": "s4-stones-1",
+    "jpg": "./assets/photos/s4-stones-1.jpg",
+    "webp": "./assets/photos/s4-stones-1.webp",
+    "station": "station-4",
+    "caption": "Source stones",
+    "credit": "Omer Devora"
+  },
+  {
+    "id": "doc-narrow-stamps",
+    "jpg": "./assets/photos/doc-narrow-stamps.jpg",
+    "webp": "./assets/photos/doc-narrow-stamps.webp",
+    "station": "documentation",
+    "caption": "Stamps, vertical view",
+    "credit": "Inbar Zak"
+  },
+  {
+    "id": "doc-with-people",
+    "jpg": "./assets/photos/doc-with-people.jpg",
+    "webp": "./assets/photos/doc-with-people.webp",
+    "station": "documentation",
+    "caption": "Opening night",
+    "credit": "Inbar Zak"
+  }
+]

@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <title>Speaking Matter — Digital Exhibition</title>
+  <meta name="description" content="Speaking Matter — a digital twin of the physical exhibition exploring the tension between ancient geological matter and digital cyber-cryptography." />
+
+  <meta property="og:title" content="Speaking Matter" />
+  <meta property="og:description" content="A digital twin of the physical exhibition — stones, scans, and cryptography." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Frank+Ruhl+Libre:wght@400;500;700&family=Heebo:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="./css/reset.css" />
+  <link rel="stylesheet" href="./css/tokens.css" />
+  <link rel="stylesheet" href="./css/layout.css" />
+  <link rel="stylesheet" href="./css/stations.css" />
+
+  <!-- ESM CDN imports for Three.js and Lenis -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three":          "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+      "three/addons/":  "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/",
+      "lenis":          "https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.mjs"
+    }
+  }
+  </script>
+</head>
+<body>
+  <a href="#station-1" class="skip-link" data-i18n="a11y.skip">Skip to content</a>
+
+  <header class="site-header" role="banner">
+    <a href="#top" class="brand" data-i18n="meta.site_title">Speaking Matter</a>
+
+    <nav class="site-nav" aria-label="Primary">
+      <a href="#station-1" data-i18n="nav.touch">Touch</a>
+      <a href="#station-2" data-i18n="nav.code">Code</a>
+      <a href="#station-3" data-i18n="nav.vault">Vault</a>
+      <a href="#station-4" data-i18n="nav.fictions">Fictions</a>
+      <a href="#station-5" data-i18n="nav.documentation">Documentation</a>
+    </nav>
+
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-current="true">EN</button>
+      <span aria-hidden="true">/</span>
+      <button type="button" data-lang="he">HE</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ─── HERO ──────────────────────────────────────────── -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <video class="hero__video" autoplay loop muted playsinline preload="metadata"
+             poster="./assets/video/stamps-poster.jpg" aria-hidden="true">
+        <source src="./assets/video/stamps.webm" type="video/webm" />
+        <source src="./assets/video/stamps.mp4"  type="video/mp4"  />
+      </video>
+
+      <div class="hero__content">
+        <p class="hero__eyebrow">
+          <span class="dot" aria-hidden="true"></span>
+          <span data-i18n="hero.eyebrow">Bezalel Academy · M.Des Industrial Design · 2026</span>
+        </p>
+        <h1 class="hero__title" id="hero-title" data-i18n="hero.title">Speaking Matter</h1>
+        <p class="hero__sub" data-i18n="hero.sub">
+          A digital twin of the physical exhibition. The visitor moves through four stations — touch, code, vault, fiction — and watches matter transform into data, and back.
+        </p>
+      </div>
+
+      <div class="hero__scroll-hint" aria-hidden="true">
+        <span data-i18n="hero.scroll_hint">Scroll</span>
+        <span class="line"></span>
+      </div>
+    </section>
+
+    <!-- ─── STATION 1 — Physical Touch ─────────────────── -->
+    <section class="station" id="station-1" aria-labelledby="station-1-title">
+      <div class="station__grid station__grid--split">
+        <div>
+          <p class="station__eyebrow" data-i18n="stations.station-1.eyebrow">Station 01 / The Physical Touch</p>
+          <h2 class="station__title" id="station-1-title" data-i18n="stations.station-1.title">Stamps press into clay.</h2>
+          <div class="prose" data-i18n="stations.station-1.body" data-i18n-html="true">
+            <p>The body content for this station will load from the locale JSON.</p>
+          </div>
+          <p class="station__label" data-i18n="stations.station-1.label" hidden></p>
+        </div>
+        <div class="media-column">
+          <div class="media-frame">
+            <video autoplay loop muted playsinline preload="metadata"
+                   poster="./assets/video/reliefs-poster.jpg" aria-hidden="true">
+              <source src="./assets/video/reliefs.webm" type="video/webm" />
+              <source src="./assets/video/reliefs.mp4"  type="video/mp4"  />
+            </video>
+          </div>
+          <picture class="media-frame">
+            <source srcset="./assets/photos/s1-finger-on-stamp.webp" type="image/webp" />
+            <img src="./assets/photos/s1-finger-on-stamp.jpg" alt="A finger pressing a stamp into clay" loading="lazy" />
+          </picture>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── STATION 2 — Stone Code ─────────────────────── -->
+    <section class="station" id="station-2" aria-labelledby="station-2-title">
+      <div class="station__grid station__grid--split">
+        <div>
+          <p class="station__eyebrow" data-i18n="stations.station-2.eyebrow">Station 02 / Digital Anatomy</p>
+          <h2 class="station__title" id="station-2-title" data-i18n="stations.station-2.title">Surface becomes signal.</h2>
+          <div class="prose" data-i18n="stations.station-2.body" data-i18n-html="true">
+            <p>The body content for this station will load from the locale JSON.</p>
+          </div>
+        </div>
+        <div class="media-column">
+          <picture class="media-frame media-frame--tall">
+            <source srcset="./assets/stone-codes/flint_jlm_03.webp" type="image/webp" />
+            <img src="./assets/stone-codes/flint_jlm_03.png" alt="Stone Code: hexadecimal grid derived from the topography of a flint" loading="lazy" />
+          </picture>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── STATION 3 — Geological Cryptography ────────── -->
+    <section class="station" id="station-3" aria-labelledby="station-3-title">
+      <div class="station__grid station__grid--split">
+        <div>
+          <p class="station__eyebrow" data-i18n="stations.station-3.eyebrow">Station 03 / Geological Cryptography</p>
+          <h2 class="station__title" id="station-3-title" data-i18n="stations.station-3.title">Encrypt with a stone.</h2>
+          <div class="prose" data-i18n="stations.station-3.body" data-i18n-html="true">
+            <p>The body content for this station will load from the locale JSON.</p>
+          </div>
+        </div>
+        <div class="media-column">
+          <picture class="media-frame">
+            <source srcset="./assets/photos/s3-encryption-app.webp" type="image/webp" />
+            <img src="./assets/photos/s3-encryption-app.jpg" alt="The Stone Vault encryption interface" loading="lazy" />
+          </picture>
+          <picture class="media-frame">
+            <source srcset="./assets/photos/s3-encryption-presenting.webp" type="image/webp" />
+            <img src="./assets/photos/s3-encryption-presenting.jpg" alt="A demonstration of the Stone Vault at the exhibition" loading="lazy" />
+          </picture>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── STATION 4 — Geological Fictions ────────────── -->
+    <section class="station" id="station-4" aria-labelledby="station-4-title">
+      <div class="station__grid station__grid--split">
+        <div>
+          <p class="station__eyebrow" data-i18n="stations.station-4.eyebrow">Station 04 / Geological Fictions</p>
+          <h2 class="station__title" id="station-4-title" data-i18n="stations.station-4.title">Stones that never were.</h2>
+          <div class="prose" data-i18n="stations.station-4.body" data-i18n-html="true">
+            <p>The body content for this station will load from the locale JSON.</p>
+          </div>
+        </div>
+        <div class="ps-viewer" id="ps-viewer" tabindex="0" aria-label="Possible Stones 3D viewer">
+          <div class="ps-viewer__canvas" id="ps-canvas"></div>
+          <div class="ps-viewer__loading" id="ps-loading" aria-live="polite">
+            <p id="ps-loading-text">Loading stones…</p>
+            <div class="ps-progress"><div id="ps-progress-bar"></div></div>
+          </div>
+          <aside class="ps-viewer__info" id="ps-info"></aside>
+          <nav class="ps-viewer__nav" id="ps-nav" aria-label="Possible Stones index"></nav>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── STATION 5 — Exhibition Documentation ────────── -->
+    <section class="station" id="station-5" aria-labelledby="station-5-title">
+      <p class="station__eyebrow station__eyebrow--centered" data-i18n="stations.station-5.eyebrow">Station 05 / Exhibition Documentation</p>
+      <h2 class="station__title station__title--centered" id="station-5-title" data-i18n="stations.station-5.title">The room itself.</h2>
+      <hr class="rule" />
+      <!-- Photo grid is hydrated dynamically from assets/photos/manifest.json -->
+      <div class="photo-grid" id="photo-grid" aria-label="Exhibition documentation photographs"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <h4 data-i18n="meta.site_title">Speaking Matter</h4>
+        <p data-i18n="footer.tagline">A graduation project investigating the translation of geological matter into computational form.</p>
+      </div>
+      <div>
+        <h4 data-i18n="footer.credits_title">Credits</h4>
+        <p data-i18n="footer.credits" data-i18n-html="true">Photography:<br />Inbar Zak, Omer Devora</p>
+      </div>
+      <div>
+        <h4 data-i18n="footer.code_title">Code</h4>
+        <p><a href="https://github.com/maayanmag/speaking-matter">github.com/maayanmag/speaking-matter</a></p>
+      </div>
+    </div>
+    <p class="colophon" data-i18n="footer.colophon">© 2026 Maayan Magenheim · built with stones, code, and a lot of clay</p>
+  </footer>
+
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>
