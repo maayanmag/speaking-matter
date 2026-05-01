@@ -64,6 +64,7 @@
   --maxw-prose: 70ch;
   --maxw-wide:  1280px;
   --gutter:     clamp(1rem, 4vw, 3rem);
+  --header-h:   56px;
 
   /* ─── Motion ─── */
   --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);

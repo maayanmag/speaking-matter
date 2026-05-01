@@ -13,6 +13,10 @@
   "a11y": {
     "skip": "Skip to content"
   },
+  "ui": {
+    "read_more": "Read more",
+    "zoom_hint": "Click to zoom"
+  },
   "hero": {
     "eyebrow": "Bezalel Academy · M.Des Industrial Design · 2026",
     "title": "Speaking Matter",
@@ -45,8 +49,8 @@
       "label": "When a stone wears another's skin, what remains of its identity? Possible Stones explores the boundary between form and surface, geology and fiction. By swapping textures between stones from different landscapes, we ask: can a stone carry the memory of a place it never came from?"
     },
     "station-5": {
-      "eyebrow": "Station 05 / Exhibition Documentation",
-      "title": "The room itself."
+      "eyebrow": "Station 05 / Installation Documentation",
+      "title": "The installation."
     }
   },
   "footer": {

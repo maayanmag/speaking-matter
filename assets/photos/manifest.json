@@ -118,5 +118,21 @@
     "station": "documentation",
     "caption": "Opening night",
     "credit": "Inbar Zak"
+  },
+  {
+    "id": "s1-positive-focus",
+    "jpg": "./assets/photos/s1-positive-focus.jpg",
+    "webp": "./assets/photos/s1-positive-focus.webp",
+    "station": "station-1",
+    "caption": "Positive stamps, close-up",
+    "credit": "Omer Devora"
+  },
+  {
+    "id": "s1-positive-white",
+    "jpg": "./assets/photos/s1-positive-white.jpg",
+    "webp": "./assets/photos/s1-positive-white.webp",
+    "station": "station-1",
+    "caption": "Positive stamps, studio capture",
+    "credit": "Maayan Magenheim"
   }
 ]

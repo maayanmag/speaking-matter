@@ -19,8 +19,8 @@
   <link rel="stylesheet" href="./css/tokens.css" />
   <link rel="stylesheet" href="./css/layout.css" />
   <link rel="stylesheet" href="./css/stations.css" />
+  <link rel="stylesheet" href="./css/carousel.css" />
 
-  <!-- ESM CDN imports for Three.js and Lenis -->
   <script type="importmap">
   {
     "imports": {
@@ -32,16 +32,16 @@
   </script>
 </head>
 <body>
-  <a href="#station-1" class="skip-link" data-i18n="a11y.skip">Skip to content</a>
+  <a href="#hero" class="skip-link" data-i18n="a11y.skip">Skip to content</a>
 
   <header class="site-header" role="banner">
-    <a href="#top" class="brand" data-i18n="meta.site_title">Speaking Matter</a>
+    <a href="#hero" class="brand" data-i18n="meta.site_title">Speaking Matter</a>
 
     <nav class="site-nav" aria-label="Primary">
-      <a href="#station-1" data-i18n="nav.touch">Touch</a>
-      <a href="#station-2" data-i18n="nav.code">Code</a>
-      <a href="#station-3" data-i18n="nav.vault">Vault</a>
-      <a href="#station-4" data-i18n="nav.fictions">Fictions</a>
+      <a href="#station-1" data-station-link="0" data-i18n="nav.touch">Touch</a>
+      <a href="#station-2" data-station-link="1" data-i18n="nav.code">Code</a>
+      <a href="#station-3" data-station-link="2" data-i18n="nav.vault">Vault</a>
+      <a href="#station-4" data-station-link="3" data-i18n="nav.fictions">Fictions</a>
       <a href="#station-5" data-i18n="nav.documentation">Documentation</a>
     </nav>
 
@@ -52,7 +52,7 @@
     </div>
   </header>
 
-  <main id="top">
+  <main>
     <!-- ─── HERO ──────────────────────────────────────────── -->
     <section class="hero" id="hero" aria-labelledby="hero-title">
       <video class="hero__video" autoplay loop muted playsinline preload="metadata"
@@ -78,104 +78,146 @@
       </div>
     </section>
 
-    <!-- ─── STATION 1 — Physical Touch ─────────────────── -->
-    <section class="station" id="station-1" aria-labelledby="station-1-title">
-      <div class="station__grid station__grid--split">
-        <div>
-          <p class="station__eyebrow" data-i18n="stations.station-1.eyebrow">Station 01 / The Physical Touch</p>
-          <h2 class="station__title" id="station-1-title" data-i18n="stations.station-1.title">Stamps press into clay.</h2>
-          <div class="prose" data-i18n="stations.station-1.body" data-i18n-html="true">
-            <p>The body content for this station will load from the locale JSON.</p>
+    <!-- ─── STATIONS CAROUSEL (1–4) ───────────────────────── -->
+    <section class="stations" aria-label="Stations">
+      <div class="stations__controls">
+        <button type="button" class="carousel-btn carousel-prev" aria-label="Previous station" data-carousel-prev>
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M15 4l-8 8 8 8" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+        </button>
+        <ol class="carousel-dots" id="carousel-dots" role="tablist">
+          <li role="presentation"><button role="tab" type="button" data-dot="0" aria-current="true">01</button></li>
+          <li role="presentation"><button role="tab" type="button" data-dot="1">02</button></li>
+          <li role="presentation"><button role="tab" type="button" data-dot="2">03</button></li>
+          <li role="presentation"><button role="tab" type="button" data-dot="3">04</button></li>
+        </ol>
+        <button type="button" class="carousel-btn carousel-next" aria-label="Next station" data-carousel-next>
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 4l8 8-8 8" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+        </button>
+      </div>
+
+      <div class="stations__track" id="stations-track" role="tabpanel" tabindex="0">
+
+        <!-- Card 1 — Touch -->
+        <article class="card" id="station-1" data-card-idx="0">
+          <div class="card__text">
+            <p class="station__eyebrow" data-i18n="stations.station-1.eyebrow">Station 01 / The Physical Touch</p>
+            <h2 class="station__title" data-i18n="stations.station-1.title">Stamps press into clay.</h2>
+            <p class="card__lead" data-i18n="stations.station-1.label">A stone becomes a seal.</p>
+            <button type="button" class="read-more" data-open-modal="station-1">
+              <span data-i18n="ui.read_more">Read more</span>
+              <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+            </button>
           </div>
-          <p class="station__label" data-i18n="stations.station-1.label" hidden></p>
-        </div>
-        <div class="media-column">
-          <div class="media-frame">
-            <video autoplay loop muted playsinline preload="metadata"
-                   poster="./assets/video/reliefs-poster.jpg" aria-hidden="true">
-              <source src="./assets/video/reliefs.webm" type="video/webm" />
-              <source src="./assets/video/reliefs.mp4"  type="video/mp4"  />
-            </video>
+          <div class="card__media">
+            <div class="media-frame media-frame--video">
+              <video autoplay loop muted playsinline preload="metadata"
+                     poster="./assets/video/reliefs-poster.jpg" aria-hidden="true">
+                <source src="./assets/video/reliefs.webm" type="video/webm" />
+                <source src="./assets/video/reliefs.mp4"  type="video/mp4"  />
+              </video>
+            </div>
+            <picture class="media-frame">
+              <source srcset="./assets/photos/s1-positive-focus.webp" type="image/webp" />
+              <img src="./assets/photos/s1-positive-focus.jpg" alt="Positive stamps, close-up" loading="lazy" />
+            </picture>
           </div>
-          <picture class="media-frame">
-            <source srcset="./assets/photos/s1-finger-on-stamp.webp" type="image/webp" />
-            <img src="./assets/photos/s1-finger-on-stamp.jpg" alt="A finger pressing a stamp into clay" loading="lazy" />
-          </picture>
-        </div>
+        </article>
+
+        <!-- Card 2 — Code -->
+        <article class="card" id="station-2" data-card-idx="1">
+          <div class="card__text">
+            <p class="station__eyebrow" data-i18n="stations.station-2.eyebrow">Station 02 / Digital Anatomy</p>
+            <h2 class="station__title" data-i18n="stations.station-2.title">Surface becomes signal.</h2>
+            <p class="card__lead" data-i18n="stations.station-2.label">A stone becomes data.</p>
+            <button type="button" class="read-more" data-open-modal="station-2">
+              <span data-i18n="ui.read_more">Read more</span>
+              <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+            </button>
+          </div>
+          <div class="card__media">
+            <button type="button" class="zoomable" data-zoom-src="./assets/stone-codes/flint_jlm_03.png"
+                    data-zoom-caption="Stone Code · Flint, Jerusalem 03 — full hexadecimal grid">
+              <picture class="media-frame media-frame--tall">
+                <source srcset="./assets/stone-codes/flint_jlm_03.webp" type="image/webp" />
+                <img src="./assets/stone-codes/flint_jlm_03.png" alt="Stone Code: hexadecimal grid derived from a flint" loading="lazy" />
+              </picture>
+              <span class="zoom-hint" data-i18n="ui.zoom_hint">Click to zoom</span>
+            </button>
+            <button type="button" class="zoomable" data-zoom-src="./assets/screenshots/stone_code_explained.png"
+                    data-zoom-caption="Stone Code — annotated explanation of the byte grid">
+              <picture class="media-frame">
+                <source srcset="./assets/screenshots/stone_code_explained.webp" type="image/webp" />
+                <img src="./assets/screenshots/stone_code_explained.jpg" alt="Stone Code, annotated explanation diagram" loading="lazy" />
+              </picture>
+              <span class="zoom-hint" data-i18n="ui.zoom_hint">Click to zoom</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Card 3 — Vault -->
+        <article class="card" id="station-3" data-card-idx="2">
+          <div class="card__text">
+            <p class="station__eyebrow" data-i18n="stations.station-3.eyebrow">Station 03 / Geological Cryptography</p>
+            <h2 class="station__title" data-i18n="stations.station-3.title">Encrypt with a stone.</h2>
+            <p class="card__lead" data-i18n="stations.station-3.label">A stone becomes a key.</p>
+            <button type="button" class="read-more" data-open-modal="station-3">
+              <span data-i18n="ui.read_more">Read more</span>
+              <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+            </button>
+          </div>
+          <div class="card__media">
+            <button type="button" class="zoomable" data-zoom-src="./assets/screenshots/stone_vault.png"
+                    data-zoom-caption="Stone Vault — encryption interface">
+              <picture class="media-frame">
+                <source srcset="./assets/screenshots/stone_vault.webp" type="image/webp" />
+                <img src="./assets/screenshots/stone_vault.jpg" alt="Stone Vault encryption interface screenshot" loading="lazy" />
+              </picture>
+              <span class="zoom-hint" data-i18n="ui.zoom_hint">Click to zoom</span>
+            </button>
+            <button type="button" class="zoomable" data-zoom-src="./assets/screenshots/stone_vault_explained.png"
+                    data-zoom-caption="Stone Vault — annotated diagram of the encryption flow">
+              <picture class="media-frame">
+                <source srcset="./assets/screenshots/stone_vault_explained.webp" type="image/webp" />
+                <img src="./assets/screenshots/stone_vault_explained.jpg" alt="Stone Vault annotated explanation diagram" loading="lazy" />
+              </picture>
+              <span class="zoom-hint" data-i18n="ui.zoom_hint">Click to zoom</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Card 4 — Fictions (3D viewer) -->
+        <article class="card card--viewer" id="station-4" data-card-idx="3">
+          <div class="card__text">
+            <p class="station__eyebrow" data-i18n="stations.station-4.eyebrow">Station 04 / Geological Fictions</p>
+            <h2 class="station__title" data-i18n="stations.station-4.title">Stones that never were.</h2>
+            <p class="card__lead" data-i18n="stations.station-4.label">A stone becomes a fiction.</p>
+            <button type="button" class="read-more" data-open-modal="station-4">
+              <span data-i18n="ui.read_more">Read more</span>
+              <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+            </button>
+          </div>
+          <div class="card__media card__media--viewer">
+            <div class="ps-viewer" id="ps-viewer" tabindex="0" aria-label="Possible Stones 3D viewer">
+              <div class="ps-viewer__canvas" id="ps-canvas"></div>
+              <div class="ps-viewer__loading" id="ps-loading" aria-live="polite">
+                <p id="ps-loading-text">Loading stones…</p>
+                <div class="ps-progress"><div id="ps-progress-bar"></div></div>
+              </div>
+              <aside class="ps-viewer__info" id="ps-info"></aside>
+              <nav class="ps-viewer__nav" id="ps-nav" aria-label="Possible Stones index"></nav>
+            </div>
+          </div>
+        </article>
+
       </div>
     </section>
 
-    <!-- ─── STATION 2 — Stone Code ─────────────────────── -->
-    <section class="station" id="station-2" aria-labelledby="station-2-title">
-      <div class="station__grid station__grid--split">
-        <div>
-          <p class="station__eyebrow" data-i18n="stations.station-2.eyebrow">Station 02 / Digital Anatomy</p>
-          <h2 class="station__title" id="station-2-title" data-i18n="stations.station-2.title">Surface becomes signal.</h2>
-          <div class="prose" data-i18n="stations.station-2.body" data-i18n-html="true">
-            <p>The body content for this station will load from the locale JSON.</p>
-          </div>
-        </div>
-        <div class="media-column">
-          <picture class="media-frame media-frame--tall">
-            <source srcset="./assets/stone-codes/flint_jlm_03.webp" type="image/webp" />
-            <img src="./assets/stone-codes/flint_jlm_03.png" alt="Stone Code: hexadecimal grid derived from the topography of a flint" loading="lazy" />
-          </picture>
-        </div>
-      </div>
-    </section>
-
-    <!-- ─── STATION 3 — Geological Cryptography ────────── -->
-    <section class="station" id="station-3" aria-labelledby="station-3-title">
-      <div class="station__grid station__grid--split">
-        <div>
-          <p class="station__eyebrow" data-i18n="stations.station-3.eyebrow">Station 03 / Geological Cryptography</p>
-          <h2 class="station__title" id="station-3-title" data-i18n="stations.station-3.title">Encrypt with a stone.</h2>
-          <div class="prose" data-i18n="stations.station-3.body" data-i18n-html="true">
-            <p>The body content for this station will load from the locale JSON.</p>
-          </div>
-        </div>
-        <div class="media-column">
-          <picture class="media-frame">
-            <source srcset="./assets/photos/s3-encryption-app.webp" type="image/webp" />
-            <img src="./assets/photos/s3-encryption-app.jpg" alt="The Stone Vault encryption interface" loading="lazy" />
-          </picture>
-          <picture class="media-frame">
-            <source srcset="./assets/photos/s3-encryption-presenting.webp" type="image/webp" />
-            <img src="./assets/photos/s3-encryption-presenting.jpg" alt="A demonstration of the Stone Vault at the exhibition" loading="lazy" />
-          </picture>
-        </div>
-      </div>
-    </section>
-
-    <!-- ─── STATION 4 — Geological Fictions ────────────── -->
-    <section class="station" id="station-4" aria-labelledby="station-4-title">
-      <div class="station__grid station__grid--split">
-        <div>
-          <p class="station__eyebrow" data-i18n="stations.station-4.eyebrow">Station 04 / Geological Fictions</p>
-          <h2 class="station__title" id="station-4-title" data-i18n="stations.station-4.title">Stones that never were.</h2>
-          <div class="prose" data-i18n="stations.station-4.body" data-i18n-html="true">
-            <p>The body content for this station will load from the locale JSON.</p>
-          </div>
-        </div>
-        <div class="ps-viewer" id="ps-viewer" tabindex="0" aria-label="Possible Stones 3D viewer">
-          <div class="ps-viewer__canvas" id="ps-canvas"></div>
-          <div class="ps-viewer__loading" id="ps-loading" aria-live="polite">
-            <p id="ps-loading-text">Loading stones…</p>
-            <div class="ps-progress"><div id="ps-progress-bar"></div></div>
-          </div>
-          <aside class="ps-viewer__info" id="ps-info"></aside>
-          <nav class="ps-viewer__nav" id="ps-nav" aria-label="Possible Stones index"></nav>
-        </div>
-      </div>
-    </section>
-
-    <!-- ─── STATION 5 — Exhibition Documentation ────────── -->
-    <section class="station" id="station-5" aria-labelledby="station-5-title">
-      <p class="station__eyebrow station__eyebrow--centered" data-i18n="stations.station-5.eyebrow">Station 05 / Exhibition Documentation</p>
-      <h2 class="station__title station__title--centered" id="station-5-title" data-i18n="stations.station-5.title">The room itself.</h2>
+    <!-- ─── STATION 5 — Installation Documentation ───────── -->
+    <section class="station station--documentation" id="station-5" aria-labelledby="station-5-title">
+      <p class="station__eyebrow station__eyebrow--centered" data-i18n="stations.station-5.eyebrow">Station 05 / Installation Documentation</p>
+      <h2 class="station__title station__title--centered" id="station-5-title" data-i18n="stations.station-5.title">The installation.</h2>
       <hr class="rule" />
-      <!-- Photo grid is hydrated dynamically from assets/photos/manifest.json -->
-      <div class="photo-grid" id="photo-grid" aria-label="Exhibition documentation photographs"></div>
+      <div class="photo-grid" id="photo-grid" aria-label="Installation documentation photographs"></div>
     </section>
   </main>
 
@@ -196,6 +238,69 @@
     </div>
     <p class="colophon" data-i18n="footer.colophon">© 2026 Maayan Magenheim · built with stones, code, and a lot of clay</p>
   </footer>
+
+  <!-- ─── MODALS — full body content per station ─────────── -->
+  <dialog class="modal" id="modal-station-1" aria-labelledby="modal-1-title">
+    <div class="modal__inner">
+      <header class="modal__head">
+        <p class="station__eyebrow" data-i18n="stations.station-1.eyebrow">Station 01</p>
+        <h2 class="station__title" id="modal-1-title" data-i18n="stations.station-1.title">Stamps press into clay.</h2>
+        <button type="button" class="modal__close" aria-label="Close" data-close-modal>×</button>
+      </header>
+      <div class="modal__body prose" data-i18n="stations.station-1.body" data-i18n-html="true"></div>
+      <p class="station__label" data-i18n="stations.station-1.label"></p>
+    </div>
+  </dialog>
+
+  <dialog class="modal" id="modal-station-2" aria-labelledby="modal-2-title">
+    <div class="modal__inner">
+      <header class="modal__head">
+        <p class="station__eyebrow" data-i18n="stations.station-2.eyebrow">Station 02</p>
+        <h2 class="station__title" id="modal-2-title" data-i18n="stations.station-2.title">Surface becomes signal.</h2>
+        <button type="button" class="modal__close" aria-label="Close" data-close-modal>×</button>
+      </header>
+      <div class="modal__body prose" data-i18n="stations.station-2.body" data-i18n-html="true"></div>
+      <p class="station__label" data-i18n="stations.station-2.label"></p>
+    </div>
+  </dialog>
+
+  <dialog class="modal" id="modal-station-3" aria-labelledby="modal-3-title">
+    <div class="modal__inner">
+      <header class="modal__head">
+        <p class="station__eyebrow" data-i18n="stations.station-3.eyebrow">Station 03</p>
+        <h2 class="station__title" id="modal-3-title" data-i18n="stations.station-3.title">Encrypt with a stone.</h2>
+        <button type="button" class="modal__close" aria-label="Close" data-close-modal>×</button>
+      </header>
+      <div class="modal__body prose" data-i18n="stations.station-3.body" data-i18n-html="true"></div>
+      <p class="station__label" data-i18n="stations.station-3.label"></p>
+    </div>
+  </dialog>
+
+  <dialog class="modal" id="modal-station-4" aria-labelledby="modal-4-title">
+    <div class="modal__inner">
+      <header class="modal__head">
+        <p class="station__eyebrow" data-i18n="stations.station-4.eyebrow">Station 04</p>
+        <h2 class="station__title" id="modal-4-title" data-i18n="stations.station-4.title">Stones that never were.</h2>
+        <button type="button" class="modal__close" aria-label="Close" data-close-modal>×</button>
+      </header>
+      <div class="modal__body prose" data-i18n="stations.station-4.body" data-i18n-html="true"></div>
+      <p class="station__label" data-i18n="stations.station-4.label"></p>
+    </div>
+  </dialog>
+
+  <!-- ─── LIGHTBOX — zoomable image viewer ─────────────── -->
+  <dialog class="lightbox" id="lightbox" aria-label="Zoom view">
+    <button type="button" class="lightbox__close" aria-label="Close" data-close-lightbox>×</button>
+    <div class="lightbox__controls">
+      <button type="button" data-zoom="-1" aria-label="Zoom out">−</button>
+      <button type="button" data-zoom="reset" aria-label="Fit to screen">⤢</button>
+      <button type="button" data-zoom="+1" aria-label="Zoom in">+</button>
+    </div>
+    <div class="lightbox__stage" id="lightbox-stage">
+      <img class="lightbox__img" id="lightbox-img" alt="" />
+    </div>
+    <p class="lightbox__caption" id="lightbox-caption"></p>
+  </dialog>
 
   <script type="module" src="./js/main.js"></script>
 </body>

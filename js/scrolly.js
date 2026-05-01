@@ -24,8 +24,10 @@ export function initSmoothScroll() {
   }
   requestAnimationFrame(raf);
 
-  // Make in-page anchor links use Lenis for the scroll
+  // Make in-page anchor links use Lenis for the scroll, but skip carousel
+  // station links (those are handled by the carousel module separately).
   document.querySelectorAll('a[href^="#"]').forEach((a) => {
+    if (a.hasAttribute('data-station-link')) return;
     a.addEventListener('click', (e) => {
       const href = a.getAttribute('href');
       if (!href || href === '#') return;

@@ -1,17 +1,22 @@
 // Speaking Matter — entry point.
-// Boots i18n, hydrates the photo grid, sets up smooth scroll + reveals,
-// and lazy-loads the Station 4 inline 3D viewer behind an IntersectionObserver.
+// Boots i18n first (fills visible content), then mounts the carousel,
+// modals, lightbox, smooth scroll, photo grid, and (lazily) Station 4.
 
 import { initI18n } from './i18n.js';
 import { initPhotoGrid } from './photo-grid.js';
 import { initSmoothScroll, initReveals } from './scrolly.js';
 import { initStation4 } from './station-4-stones.js';
+import { initCarousel } from './carousel.js';
+import { initModals } from './modals.js';
+import { initLightbox } from './lightbox.js';
 
 async function boot() {
-  // i18n must run first — it fills the visible content.
   await initI18n();
   initSmoothScroll();
   initReveals();
+  initCarousel();
+  initModals();
+  initLightbox();
   initPhotoGrid();
   initStation4();
 }

@@ -87,6 +87,10 @@ STATIC = {
         "a11y": {
             "skip": "Skip to content",
         },
+        "ui": {
+            "read_more": "Read more",
+            "zoom_hint": "Click to zoom",
+        },
         "hero": {
             "eyebrow": "Bezalel Academy · M.Des Industrial Design · 2026",
             "title": "Speaking Matter",
@@ -111,8 +115,8 @@ STATIC = {
                 "title": "Stones that never were.",
             },
             "station-5": {
-                "eyebrow": "Station 05 / Exhibition Documentation",
-                "title": "The room itself.",
+                "eyebrow": "Station 05 / Installation Documentation",
+                "title": "The installation.",
             },
         },
         "footer": {
@@ -137,6 +141,10 @@ STATIC = {
         },
         "a11y": {
             "skip": "דלג/י לתוכן",
+        },
+        "ui": {
+            "read_more": "קרא/י עוד",
+            "zoom_hint": "להגדלה — לחיצה",
         },
         "hero": {
             "eyebrow": "האקדמיה לאמנות ועיצוב בצלאל · M.Des עיצוב תעשייתי · 2026",
@@ -163,7 +171,7 @@ STATIC = {
             },
             "station-5": {
                 "eyebrow": "תחנה 05 / תיעוד התערוכה",
-                "title": "החדר עצמו",
+                "title": "התערוכה",
             },
         },
         "footer": {
