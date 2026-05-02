@@ -49,6 +49,11 @@ function setActive(idx) {
   dots.forEach((d, i) => d.setAttribute('aria-current', i === idx ? 'true' : 'false'));
   if (prevBtn) prevBtn.disabled = idx === 0;
   if (nextBtn) nextBtn.disabled = idx === cards.length - 1;
+  // Keep the active chip visible when the chip strip is horizontally scrollable (mobile).
+  const activeDot = dots[idx];
+  if (activeDot && typeof activeDot.scrollIntoView === 'function') {
+    activeDot.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+  }
 }
 
 // Detect which card is centered in the viewport via IntersectionObserver.

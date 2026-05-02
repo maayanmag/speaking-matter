@@ -99,8 +99,21 @@
 }
 .carousel-dots button[aria-current="true"] .dot-num { color: var(--c-accent); }
 @media (max-width: 720px) {
+  .carousel-dots {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-block: 2px;
+  }
+  .carousel-dots::-webkit-scrollbar { display: none; }
   .carousel-dots .dot-label { display: none; }
-  .carousel-dots button { padding: 8px 10px 10px; }
+  .carousel-dots button {
+    flex: 0 0 auto;
+    padding: 6px 10px 8px;
+  }
 }
 
 /* ── Swipe hint (auto-dismiss on first interaction) ──────── */
@@ -128,6 +141,13 @@
 .carousel-swipe-hint.is-hidden {
   opacity: 0;
   transform: translateY(-4px);
+}
+@media (max-width: 720px) {
+  .carousel-swipe-hint {
+    top: calc(var(--header-h, 56px) + 70px);
+    font-size: 11px;
+    padding: 6px 12px;
+  }
 }
 
 .stations__track {
@@ -226,23 +246,42 @@
 .card__media--viewer { padding: 0; }
 .card--viewer .card__media { max-height: none; }
 
-/* Mobile: stack text above media, fill viewport, allow internal vertical scroll. */
+/* Mobile: stack text above media, let card grow with content (no nested scroll). */
 @media (max-width: 900px) {
   .card {
     grid-template-columns: 1fr;
     gap: var(--s-3);
     padding: var(--s-3);
-    min-height: calc(100svh - var(--header-h) - 60px); /* minus carousel controls */
-    overflow-y: auto;
+    min-height: 0;
+    overflow: visible;
     align-items: start;
     align-content: start;
   }
   .card__media {
-    max-height: 50svh;
+    max-height: none;
+    height: auto;
     width: 100%;
+    gap: var(--s-2);
   }
+  /* Restore natural sizing so images don't collapse to 0 in stacked layout. */
+  .card__media .media-frame,
+  .card__media .zoomable {
+    flex: 0 0 auto;
+    min-height: 0;
+    height: auto;
+  }
+  .card__media .media-frame { aspect-ratio: 4/3; }
+  .card__media .media-frame--tall { aspect-ratio: 3/4; }
+  .card__media .media-frame--video { aspect-ratio: 16/9; }
+  .card__media .zoomable .media-frame { height: auto; }
   .card__lead { font-size: var(--t-md); }
-  .stations__controls { padding: var(--s-1) var(--s-2); }
+  .stations__controls {
+    padding: var(--s-1) var(--s-2);
+    gap: var(--s-2);
+    grid-template-columns: auto minmax(0, 1fr) auto;
+  }
+  /* Card 5 (Possible Stones) — Three.js viewer needs an explicit height in stacked layout. */
+  .card--viewer .card__media { min-height: 60svh; }
 }
 
 /* ─── Zoomable image button ─────────────────────────── */
