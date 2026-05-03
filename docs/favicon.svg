@@ -1,0 +1,23 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="512" height="512" fill="#f5f5f5"/>
+  
+  <!-- Stone fragments - inspired by broken rock/stamp concept -->
+  <!-- Top left stone -->
+  <polygon points="60,60 180,60 160,180 40,160" fill="#5a5a5a" stroke="white" stroke-width="8" stroke-linejoin="round"/>
+  
+  <!-- Top right stone -->
+  <polygon points="240,80 340,40 380,160 280,180" fill="#6b6b6b" stroke="white" stroke-width="8" stroke-linejoin="round"/>
+  
+  <!-- Center stone (largest) -->
+  <polygon points="100,220 320,200 380,380 180,400 80,340" fill="#3d3d3d" stroke="white" stroke-width="8" stroke-linejoin="round"/>
+  
+  <!-- Right stone -->
+  <polygon points="360,240 460,220 440,380 320,400" fill="#707070" stroke="white" stroke-width="8" stroke-linejoin="round"/>
+  
+  <!-- Bottom left stone -->
+  <polygon points="40,380 160,360 180,460 80,480" fill="#5a5a5a" stroke="white" stroke-width="8" stroke-linejoin="round"/>
+  
+  <!-- Bottom right accent -->
+  <polygon points="280,420 420,400 440,480 320,480" fill="#6b6b6b" stroke="white" stroke-width="8" stroke-linejoin="round"/>
+</svg>
