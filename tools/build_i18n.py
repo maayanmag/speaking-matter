@@ -107,6 +107,9 @@ STATIC = {
             "encrypt": "Encrypt with stone",
             "reset": "Reset",
             "placeholder": "Type a message…",
+            "or_load": "or open an existing vault",
+            "load": "Load vault.json",
+            "download": "Download vault.json",
         },
         "hero": {
             "eyebrow": "Bezalel Academy · M.Des Industrial Design · 2026",
@@ -181,6 +184,9 @@ STATIC = {
             "encrypt": "הצפיני עם האבן",
             "reset": "איפוס",
             "placeholder": "הקלידי הודעה…",
+            "or_load": "או פתחי כספת קיימת",
+            "load": "טעני vault.json",
+            "download": "הורידי vault.json",
         },
         "hero": {
             "eyebrow": "האקדמיה לאמנות ועיצוב בצלאל · M.Des עיצוב תעשייתי · 2026",

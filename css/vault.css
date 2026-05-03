@@ -215,4 +215,69 @@
   .vault__stones { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .vault-stone__name { font-size: 11px; }
   .vault-stone__fp { display: none; }
+  .vault__output__header { flex-direction: column; align-items: stretch; gap: var(--s-1); }
 }
+
+/* ── Divider — "or load an existing vault" ─────────── */
+.vault__divider {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  margin: var(--s-1) 0;
+  color: var(--c-fg-mute);
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+.vault__divider::before,
+.vault__divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--c-line);
+}
+
+/* ── Output panel header (label + Download button) ─── */
+.vault__output__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-2);
+}
+.vault__output__header .vault__label { margin: 0; }
+
+.vault__btn--mini {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--c-fg);
+  background: var(--c-bg);
+  border: 1px solid var(--c-line);
+  cursor: pointer;
+  transition: border-color var(--d-fast) var(--ease-out),
+              color var(--d-fast) var(--ease-out);
+}
+.vault__btn--mini:hover { border-color: var(--c-accent); color: var(--c-accent); }
+.vault__btn--mini svg { stroke: currentColor; }
+
+/* ── "Loaded · vault-…json" badge ──────────────────── */
+.vault__loaded {
+  margin: 0;
+  padding: 6px 10px;
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  color: var(--c-accent);
+  background: rgba(255,255,255,0.02);
+  border-inline-start: 2px solid var(--c-accent);
+  letter-spacing: var(--tracking-wide);
+}
+
+/* The Load button (in the actions row) needs an icon-aligned layout too */
+.vault__btn--ghost svg { stroke: currentColor; vertical-align: middle; margin-inline-end: 4px; }
+

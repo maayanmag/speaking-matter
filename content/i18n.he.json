@@ -30,7 +30,10 @@
     "step4": "4 · פענחי באמצעות:",
     "encrypt": "הצפיני עם האבן",
     "reset": "איפוס",
-    "placeholder": "הקלידי הודעה…"
+    "placeholder": "הקלידי הודעה…",
+    "or_load": "או פתחי כספת קיימת",
+    "load": "טעני vault.json",
+    "download": "הורידי vault.json"
   },
   "hero": {
     "eyebrow": "האקדמיה לאמנות ועיצוב בצלאל · M.Des עיצוב תעשייתי · 2026",

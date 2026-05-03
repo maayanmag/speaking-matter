@@ -30,7 +30,10 @@
     "step4": "4 · Decrypt with:",
     "encrypt": "Encrypt with stone",
     "reset": "Reset",
-    "placeholder": "Type a message…"
+    "placeholder": "Type a message…",
+    "or_load": "or open an existing vault",
+    "load": "Load vault.json",
+    "download": "Download vault.json"
   },
   "hero": {
     "eyebrow": "Bezalel Academy · M.Des Industrial Design · 2026",
