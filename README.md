@@ -1,5 +1,11 @@
 # Speaking Matter · דומם מדבר
 
+## Navigate the Exhibition
+
+👉 **[Visit the portal](https://maayanmag.github.io/speaking-matter/)** — available in English and Hebrew
+
+---
+
 ## Stone as Data, Data as Stone
 
 When a hand grasps an ancient stone and presses it into soft clay, it repeats a gesture older than writing itself. But what happens when that gesture becomes digital? When a rock's three-dimensional surface is scanned, encrypted, rendered in hexadecimal, and transformed into a cryptographic key?
@@ -29,6 +35,8 @@ When the elevation map of a scanned rock is flattened into a stream of bytes and
 The result reads like a classified document, a terminal screen, an ancient cipher decoded — but all it displays is the stone's own proof of existence.
 
 ![Stone code visualization](assets/screenshots/stone_code_explained.jpg)
+
+![Hand on relief texture](assets/photos/s2-hand-on-relief.jpg)
 
 ### **Vault: Encryption Born from Geology**
 
@@ -67,12 +75,6 @@ Together, they pose a single question: can ancient matter and digital abstractio
 ## About the Digital Craftsmanship
 
 The portal is built with vanilla JavaScript and Three.js for 3D rendering, deployed as a static site to allow direct access from anywhere. The bilingual interface respects right-to-left typography for Hebrew and includes accessibility features for reduced motion. No heavy dependencies; no build step — just clean code and open web standards.
-
----
-
-## Navigate the Exhibition
-
-👉 **[Visit the portal](https://maayanmag.github.io/speaking-matter/)** — available in English and Hebrew
 
 ---
 
