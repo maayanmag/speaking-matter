@@ -194,6 +194,12 @@
   overflow: hidden;
   background: var(--c-surface);
   aspect-ratio: 4/3;
+  cursor: zoom-in;
+  outline: none;
+}
+.photo-grid figure:focus-visible {
+  outline: 2px solid var(--c-accent);
+  outline-offset: 3px;
 }
 .photo-grid figure img {
   width: 100%; height: 100%;

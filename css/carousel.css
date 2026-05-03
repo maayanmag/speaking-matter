@@ -496,10 +496,6 @@
   image-rendering: crisp-edges;
 }
 .lightbox__caption {
-  position: fixed;
-  top: var(--s-3);
-  inset-inline-start: var(--s-3);
-  max-width: 60vw;
   font-family: var(--f-mono);
   font-size: var(--t-xs);
   color: var(--c-fg-dim);
@@ -507,5 +503,67 @@
   padding: 8px 12px;
   border: 1px solid var(--c-line);
   letter-spacing: var(--tracking-wide);
+  margin: 0;
+  max-width: min(70vw, 720px);
+  text-align: center;
+}
+.lightbox__meta {
+  position: fixed;
+  top: var(--s-3);
+  inset-inline-start: var(--s-3);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-1);
   z-index: 10;
+  pointer-events: none;
+}
+.lightbox__meta > * { pointer-events: auto; }
+.lightbox__counter {
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  color: var(--c-fg);
+  background: rgba(10,10,10,0.85);
+  padding: 8px 12px;
+  border: 1px solid var(--c-line);
+  letter-spacing: var(--tracking-wide);
+  user-select: none;
+}
+.lightbox__nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 56px;
+  height: 80px;
+  font-family: var(--f-mono);
+  font-size: 36px;
+  line-height: 1;
+  color: var(--c-fg);
+  background: rgba(10,10,10,0.7);
+  border: 1px solid var(--c-line);
+  cursor: pointer;
+  z-index: 10;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--d-base) var(--ease-out), opacity var(--d-base) var(--ease-out);
+}
+.lightbox__nav:hover { background: var(--c-bg); border-color: var(--c-fg-mute); }
+.lightbox__nav:disabled { opacity: 0.3; cursor: not-allowed; }
+.lightbox__nav--prev { inset-inline-start: var(--s-2); }
+.lightbox__nav--next { inset-inline-end: var(--s-2); }
+/* In RTL the chevrons should still point in their natural reading direction */
+[dir="rtl"] .lightbox__nav--prev { transform: translateY(-50%) scaleX(-1); }
+[dir="rtl"] .lightbox__nav--next { transform: translateY(-50%) scaleX(-1); }
+
+@media (max-width: 720px) {
+  .lightbox__nav { width: 44px; height: 64px; font-size: 28px; }
+  .lightbox__meta {
+    top: auto;
+    bottom: calc(var(--s-3) + 56px + var(--s-2));
+    inset-inline-start: 50%;
+    transform: translateX(-50%);
+    flex-direction: column;
+  }
+  .lightbox__caption { max-width: calc(100vw - var(--s-3) * 2); }
+  .lightbox__hint { display: none; }
 }

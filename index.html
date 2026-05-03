@@ -215,9 +215,28 @@
                 <button type="button" class="vault__btn vault__btn--ghost" data-action="reset" data-i18n="vault.reset">Reset</button>
               </div>
 
+              <div class="vault__divider">
+                <span data-i18n="vault.or_load">or open an existing vault</span>
+              </div>
+
+              <div class="vault__row vault__row--actions">
+                <button type="button" class="vault__btn vault__btn--ghost" data-action="load">
+                  <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span data-i18n="vault.load">Load vault.json</span>
+                </button>
+                <input type="file" accept=".json,application/json" hidden data-file-input />
+              </div>
+
               <div class="vault__row vault__output" hidden data-output>
-                <p class="vault__label" data-i18n="vault.step3">3 · Ciphertext (AES-256-GCM, IV ‖ ciphertext)</p>
+                <div class="vault__output__header">
+                  <p class="vault__label" data-i18n="vault.step3">3 · Ciphertext (AES-256-GCM, IV ‖ ciphertext)</p>
+                  <button type="button" class="vault__btn vault__btn--mini" data-action="download" hidden>
+                    <svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span data-i18n="vault.download">Download vault.json</span>
+                  </button>
+                </div>
                 <pre class="vault__hex" data-hex></pre>
+                <p class="vault__loaded" data-loaded hidden></p>
 
                 <p class="vault__label" data-i18n="vault.step4">4 · Decrypt with:</p>
                 <div class="vault__stones" data-stones="decrypt"></div>
@@ -346,6 +365,8 @@
   <!-- ─── LIGHTBOX — deep-zoom image viewer ─────────────── -->
   <dialog class="lightbox" id="lightbox" aria-label="Zoom view">
     <button type="button" class="lightbox__close" aria-label="Close" data-close-lightbox>×</button>
+    <button type="button" class="lightbox__nav lightbox__nav--prev" data-nav="prev" aria-label="Previous image" hidden>‹</button>
+    <button type="button" class="lightbox__nav lightbox__nav--next" data-nav="next" aria-label="Next image" hidden>›</button>
     <div class="lightbox__controls">
       <button type="button" data-zoom="-1" aria-label="Zoom out">−</button>
       <span class="lightbox__pct" id="lightbox-zoom-pct" aria-live="polite">100%</span>
@@ -358,7 +379,10 @@
         <img class="lightbox__img" id="lightbox-img" alt="" />
       </div>
     </div>
-    <p class="lightbox__caption" id="lightbox-caption"></p>
+    <div class="lightbox__meta">
+      <span class="lightbox__counter" id="lightbox-counter" hidden></span>
+      <p class="lightbox__caption" id="lightbox-caption"></p>
+    </div>
   </dialog>
 
   <script type="module" src="./js/main.js"></script>
