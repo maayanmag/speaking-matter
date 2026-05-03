@@ -170,8 +170,8 @@
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
   gap: var(--s-5);
-  padding: clamp(var(--s-4), 6vw, var(--s-6));
-  align-items: center;
+  padding: var(--s-2) clamp(var(--s-4), 6vw, var(--s-6)) clamp(var(--s-4), 6vw, var(--s-6));
+  align-items: start;
 }
 
 .card__text {
@@ -251,7 +251,7 @@
   .card {
     grid-template-columns: 1fr;
     gap: var(--s-3);
-    padding: var(--s-3);
+    padding: var(--s-1) var(--s-3) var(--s-3);
     min-height: 0;
     overflow: visible;
     align-items: start;
