@@ -21,17 +21,18 @@
   --c-danger:        #c8543a;    /* dramatic delete / destruction */
 
   /* ─── Type ─── */
-  /* Sans (titles, UI, buttons) — kept Inter, user said titles are great. */
-  --f-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  /* Serif (body prose) — Newsreader, a contemporary text serif designed for
-   * digital reading. Pairs cleanly with Inter and brings the warmth of an
-   * exhibition catalogue without the weight of a classical book serif. */
+  /* Serif everywhere — Newsreader for English (warm, exhibition-catalogue),
+   * Frank Ruhl Libre for Hebrew (humanist, calligraphic). Both serifs are
+   * used for body prose AND for what was previously sans (titles, UI, nav,
+   * buttons), so the whole portal reads as a single serif voice.
+   * --f-sans is kept as an alias to the serif stack so legacy references
+   * resolve to serif without churn. */
   --f-serif:    'Newsreader', 'Source Serif 4', 'Georgia', serif;
+  --f-sans:     var(--f-serif);
   --f-mono: 'JetBrains Mono', 'SF Mono', 'Menlo', 'Consolas', monospace;
-  /* Hebrew — Frank Ruhl Libre (Yanek Iontef) is the closest free counterpart
-   * to the "Abraham" feel: humanist, calligraphic, exhibition-grade. */
+  /* Hebrew serif (used for both prose and chrome). */
   --f-serif-he: 'Frank Ruhl Libre', 'David', 'Heebo', serif;
-  --f-sans-he:  'Heebo', 'Frank Ruhl Libre', system-ui, sans-serif;
+  --f-sans-he:  var(--f-serif-he);
 
   /* Modular type scale — base 18px, ratio 1.25 */
   --t-xs:   0.72rem;   /* 12.96px */

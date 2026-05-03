@@ -45,11 +45,6 @@
     <a href="#hero" class="brand" data-i18n="meta.site_title">Speaking Matter</a>
 
     <nav class="site-nav" aria-label="Primary">
-      <a href="#station-1" data-station-link="0" data-i18n="nav.touch">Stamps</a>
-      <a href="#station-2" data-station-link="1" data-i18n="nav.reliefs">Reliefs</a>
-      <a href="#station-3" data-station-link="2" data-i18n="nav.code">Code</a>
-      <a href="#station-4" data-station-link="3" data-i18n="nav.vault">Vault</a>
-      <a href="#station-5" data-station-link="4" data-i18n="nav.fictions">Fictions</a>
       <a href="#station-6" data-i18n="nav.documentation">Documentation</a>
     </nav>
 
@@ -110,10 +105,9 @@
       <div class="stations__track" id="stations-track" role="tabpanel" tabindex="0">
 
         <!-- Card 1 — Stamps -->
-        <article class="card" id="station-1" data-card-idx="0">
+        <article class="card" id="station-1" data-card-idx="0" aria-labelledby="card-1-title">
           <div class="card__text">
-            <p class="station__eyebrow" data-i18n="stations.station-1.eyebrow">Station 01 / Local Signature</p>
-            <h2 class="station__title" data-i18n="stations.station-1.title">Stamps press into clay.</h2>
+            <h2 class="station__title visually-hidden" id="card-1-title" data-i18n="nav.touch">Stamps</h2>
             <p class="card__lead" data-i18n="stations.station-1.label">A stone becomes a seal.</p>
             <button type="button" class="read-more" data-open-modal="station-1">
               <span data-i18n="ui.read_more">Read more</span>
@@ -133,10 +127,9 @@
         </article>
 
         <!-- Card 2 — Reliefs (NEW) -->
-        <article class="card" id="station-2" data-card-idx="1">
+        <article class="card" id="station-2" data-card-idx="1" aria-labelledby="card-2-title">
           <div class="card__text">
-            <p class="station__eyebrow" data-i18n="stations.station-2.eyebrow">Station 02 / Surface Unfolded</p>
-            <h2 class="station__title" data-i18n="stations.station-2.title">Stone skin, laid flat.</h2>
+            <h2 class="station__title visually-hidden" id="card-2-title" data-i18n="nav.reliefs">Reliefs</h2>
             <p class="card__lead" data-i18n="stations.station-2.label">A topographic confession.</p>
             <button type="button" class="read-more" data-open-modal="station-2">
               <span data-i18n="ui.read_more">Read more</span>
@@ -159,10 +152,9 @@
         </article>
 
         <!-- Card 3 — Stone Code -->
-        <article class="card" id="station-3" data-card-idx="2">
+        <article class="card" id="station-3" data-card-idx="2" aria-labelledby="card-3-title">
           <div class="card__text">
-            <p class="station__eyebrow" data-i18n="stations.station-3.eyebrow">Station 03 / Digital Anatomy</p>
-            <h2 class="station__title" data-i18n="stations.station-3.title">Surface becomes signal.</h2>
+            <h2 class="station__title visually-hidden" id="card-3-title" data-i18n="nav.code">Code</h2>
             <p class="card__lead" data-i18n="stations.station-3.label">A stone becomes data.</p>
             <button type="button" class="read-more" data-open-modal="station-3">
               <span data-i18n="ui.read_more">Read more</span>
@@ -190,10 +182,9 @@
         </article>
 
         <!-- Card 4 — Stone Vault -->
-        <article class="card" id="station-4" data-card-idx="3">
+        <article class="card" id="station-4" data-card-idx="3" aria-labelledby="card-4-title">
           <div class="card__text">
-            <p class="station__eyebrow" data-i18n="stations.station-4.eyebrow">Station 04 / Geological Cryptography</p>
-            <h2 class="station__title" data-i18n="stations.station-4.title">Encrypt with a stone.</h2>
+            <h2 class="station__title visually-hidden" id="card-4-title" data-i18n="nav.vault">Vault</h2>
             <p class="card__lead" data-i18n="stations.station-4.label">A stone becomes a key.</p>
             <button type="button" class="read-more" data-open-modal="station-4">
               <span data-i18n="ui.read_more">Read more</span>
@@ -254,10 +245,9 @@
         </article>
 
         <!-- Card 5 — Possible Stones (3D viewer) -->
-        <article class="card card--viewer" id="station-5" data-card-idx="4">
+        <article class="card card--viewer" id="station-5" data-card-idx="4" aria-labelledby="card-5-title">
           <div class="card__text">
-            <p class="station__eyebrow" data-i18n="stations.station-5.eyebrow">Station 05 / Geological Fictions</p>
-            <h2 class="station__title" data-i18n="stations.station-5.title">Stones that never were.</h2>
+            <h2 class="station__title visually-hidden" id="card-5-title" data-i18n="nav.fictions">Fictions</h2>
             <p class="card__lead" data-i18n="stations.station-5.label">A stone becomes a fiction.</p>
             <button type="button" class="read-more" data-open-modal="station-5">
               <span data-i18n="ui.read_more">Read more</span>
