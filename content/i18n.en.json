@@ -17,9 +17,20 @@
   "ui": {
     "read_more": "Read more",
     "zoom_hint": "Click to zoom",
+    "zoom_help": "Wheel · pinch · double-click to zoom · drag to pan",
     "swipe_hint": "Swipe or use ◀ ▶ to move between stations",
     "prev_label": "Previous",
     "next_label": "Next"
+  },
+  "vault": {
+    "intro": "Each stone's topography hashes to a 256-bit AES-GCM key. Pick a stone, type a message, and try to decrypt it with the same — or a different — stone.",
+    "step1": "1 · Stone (key)",
+    "step2": "2 · Message",
+    "step3": "3 · Ciphertext (AES-256-GCM, IV ‖ ciphertext)",
+    "step4": "4 · Decrypt with:",
+    "encrypt": "Encrypt with stone",
+    "reset": "Reset",
+    "placeholder": "Type a message…"
   },
   "hero": {
     "eyebrow": "Bezalel Academy · M.Des Industrial Design · 2026",

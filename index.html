@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="./css/layout.css" />
   <link rel="stylesheet" href="./css/stations.css" />
   <link rel="stylesheet" href="./css/carousel.css" />
+  <link rel="stylesheet" href="./css/vault.css" />
 
   <script type="importmap">
   {
@@ -193,23 +194,37 @@
               <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
             </button>
           </div>
-          <div class="card__media">
-            <button type="button" class="zoomable" data-zoom-src="./assets/screenshots/stone_vault.png"
-                    data-zoom-caption="Stone Vault — encryption interface">
-              <picture class="media-frame">
-                <source srcset="./assets/screenshots/stone_vault.webp" type="image/webp" />
-                <img src="./assets/screenshots/stone_vault.jpg" alt="Stone Vault encryption interface screenshot" loading="lazy" />
-              </picture>
-              <span class="zoom-hint" data-i18n="ui.zoom_hint">Click to zoom</span>
-            </button>
-            <button type="button" class="zoomable" data-zoom-src="./assets/screenshots/stone_vault_explained.png"
-                    data-zoom-caption="Stone Vault — annotated diagram of the encryption flow">
-              <picture class="media-frame">
-                <source srcset="./assets/screenshots/stone_vault_explained.webp" type="image/webp" />
-                <img src="./assets/screenshots/stone_vault_explained.jpg" alt="Stone Vault annotated explanation diagram" loading="lazy" />
-              </picture>
-              <span class="zoom-hint" data-i18n="ui.zoom_hint">Click to zoom</span>
-            </button>
+          <div class="card__media card__media--vault">
+            <div class="vault" id="vault">
+              <p class="vault__intro" data-i18n="vault.intro">Stones are keys. Pick one — its topography becomes a 256-bit AES key.</p>
+
+              <div class="vault__row">
+                <p class="vault__label" data-i18n="vault.step1">1 · Stone (key)</p>
+                <div class="vault__stones" data-stones="encrypt"></div>
+              </div>
+
+              <div class="vault__row">
+                <p class="vault__label" data-i18n="vault.step2">2 · Message</p>
+                <textarea class="vault__msg" rows="2" data-i18n-placeholder="vault.placeholder" placeholder="Type a message…"></textarea>
+              </div>
+
+              <div class="vault__row vault__row--actions">
+                <button type="button" class="vault__btn" data-action="encrypt" disabled>
+                  <span data-i18n="vault.encrypt">Encrypt with stone</span>
+                </button>
+                <button type="button" class="vault__btn vault__btn--ghost" data-action="reset" data-i18n="vault.reset">Reset</button>
+              </div>
+
+              <div class="vault__row vault__output" hidden data-output>
+                <p class="vault__label" data-i18n="vault.step3">3 · Ciphertext (AES-256-GCM, IV ‖ ciphertext)</p>
+                <pre class="vault__hex" data-hex></pre>
+
+                <p class="vault__label" data-i18n="vault.step4">4 · Decrypt with:</p>
+                <div class="vault__stones" data-stones="decrypt"></div>
+
+                <div class="vault__verdict" data-verdict data-state="info"></div>
+              </div>
+            </div>
           </div>
         </article>
 
@@ -328,16 +343,20 @@
     </div>
   </dialog>
 
-  <!-- ─── LIGHTBOX — zoomable image viewer ─────────────── -->
+  <!-- ─── LIGHTBOX — deep-zoom image viewer ─────────────── -->
   <dialog class="lightbox" id="lightbox" aria-label="Zoom view">
     <button type="button" class="lightbox__close" aria-label="Close" data-close-lightbox>×</button>
     <div class="lightbox__controls">
       <button type="button" data-zoom="-1" aria-label="Zoom out">−</button>
+      <span class="lightbox__pct" id="lightbox-zoom-pct" aria-live="polite">100%</span>
       <button type="button" data-zoom="reset" aria-label="Fit to screen">⤢</button>
       <button type="button" data-zoom="+1" aria-label="Zoom in">+</button>
     </div>
+    <p class="lightbox__hint" data-i18n="ui.zoom_help">Wheel · pinch · double-click to zoom · drag to pan</p>
     <div class="lightbox__stage" id="lightbox-stage">
-      <img class="lightbox__img" id="lightbox-img" alt="" />
+      <div class="lightbox__zoom" id="lightbox-zoom">
+        <img class="lightbox__img" id="lightbox-img" alt="" />
+      </div>
     </div>
     <p class="lightbox__caption" id="lightbox-caption"></p>
   </dialog>

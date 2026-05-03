@@ -93,9 +93,20 @@ STATIC = {
         "ui": {
             "read_more": "Read more",
             "zoom_hint": "Click to zoom",
+            "zoom_help": "Wheel · pinch · double-click to zoom · drag to pan",
             "swipe_hint": "Swipe or use ◀ ▶ to move between stations",
             "prev_label": "Previous",
             "next_label": "Next",
+        },
+        "vault": {
+            "intro": "Each stone's topography hashes to a 256-bit AES-GCM key. Pick a stone, type a message, and try to decrypt it with the same — or a different — stone.",
+            "step1": "1 · Stone (key)",
+            "step2": "2 · Message",
+            "step3": "3 · Ciphertext (AES-256-GCM, IV ‖ ciphertext)",
+            "step4": "4 · Decrypt with:",
+            "encrypt": "Encrypt with stone",
+            "reset": "Reset",
+            "placeholder": "Type a message…",
         },
         "hero": {
             "eyebrow": "Bezalel Academy · M.Des Industrial Design · 2026",
@@ -156,9 +167,20 @@ STATIC = {
         "ui": {
             "read_more": "קרא/י עוד",
             "zoom_hint": "להגדלה — לחיצה",
+            "zoom_help": "גלגלת · צביטה · לחיצה כפולה לזום · גרירה להזזה",
             "swipe_hint": "החלק/י או השתמש/י ב‑◀ ▶ למעבר בין התחנות",
             "prev_label": "הקודמת",
             "next_label": "הבאה",
+        },
+        "vault": {
+            "intro": "כל אבן — הטופוגרפיה שלה הופכת למפתח AES-GCM של 256 ביט. בחרי אבן, הקלידי הודעה, ונסי לפענח עם אותה אבן — או עם אחרת.",
+            "step1": "1 · אבן (מפתח)",
+            "step2": "2 · הודעה",
+            "step3": "3 · צופן (AES-256-GCM ,‏ IV ‖ צופן)",
+            "step4": "4 · פענחי באמצעות:",
+            "encrypt": "הצפיני עם האבן",
+            "reset": "איפוס",
+            "placeholder": "הקלידי הודעה…",
         },
         "hero": {
             "eyebrow": "האקדמיה לאמנות ועיצוב בצלאל · M.Des עיצוב תעשייתי · 2026",

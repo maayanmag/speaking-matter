@@ -64,6 +64,11 @@ function applyToDom(data) {
       el.textContent = value;
     }
   });
+  // Translate placeholder attributes for inputs/textareas.
+  document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
+    const v = getDeep(data, el.getAttribute('data-i18n-placeholder'));
+    if (v != null) el.setAttribute('placeholder', v);
+  });
 
   // Update document <title> from the locale's site_title if available
   const title = getDeep(data, 'meta.site_title');

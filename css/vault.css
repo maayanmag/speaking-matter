@@ -1,0 +1,218 @@
+/* ─── Stone Vault — interactive encryption widget ───────────────
+ * A demo experience for the "Vault" station: visitors pick a stone
+ * (whose helper data derives a 256-bit AES-GCM key), type a message,
+ * see the ciphertext, then try to decrypt with the same or a
+ * different stone. Right stone → message; wrong stone → glitch.
+ */
+
+.vault {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+  width: 100%;
+  max-height: 75svh;
+  overflow-y: auto;
+  padding: var(--s-2);
+  background: rgba(10,10,10,0.55);
+  border: 1px solid var(--c-line);
+  scrollbar-width: thin;
+}
+.vault::-webkit-scrollbar { width: 4px; }
+.vault::-webkit-scrollbar-thumb { background: var(--c-line); }
+
+.vault__row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-1);
+}
+.vault__row--actions { flex-direction: row; gap: var(--s-2); }
+
+.vault__label {
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--c-fg-mute);
+  margin: 0;
+}
+
+/* ── Stone picker ──────────────────────────────────── */
+.vault__stones {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--s-1);
+}
+
+.vault-stone {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 4px;
+  padding: 6px;
+  background: var(--c-bg);
+  border: 1px solid var(--c-line);
+  color: var(--c-fg-dim);
+  cursor: pointer;
+  transition: border-color var(--d-fast) var(--ease-out),
+              color var(--d-fast) var(--ease-out),
+              transform var(--d-fast) var(--ease-out);
+  text-align: start;
+}
+.vault-stone:hover {
+  color: var(--c-fg);
+  border-color: var(--c-fg-mute);
+  transform: translateY(-1px);
+}
+.vault-stone[aria-pressed="true"] {
+  color: var(--c-accent);
+  border-color: var(--c-accent);
+  box-shadow: inset 0 0 0 1px var(--c-accent);
+}
+.vault-stone__thumb {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background: #050505;
+  display: block;
+  filter: contrast(1.1);
+}
+.vault-stone[aria-pressed="true"] .vault-stone__thumb {
+  filter: contrast(1.15) drop-shadow(0 0 4px var(--c-accent));
+}
+.vault-stone__name {
+  font-family: var(--f-sans);
+  font-size: var(--t-xs);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.25;
+}
+.vault-stone__fp {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  color: var(--c-fg-mute);
+  word-break: break-all;
+}
+
+/* ── Message input + actions ───────────────────────── */
+.vault__msg {
+  width: 100%;
+  min-height: 64px;
+  padding: 10px 12px;
+  font-family: var(--f-mono);
+  font-size: var(--t-sm);
+  line-height: 1.5;
+  color: var(--c-fg);
+  background: var(--c-bg);
+  border: 1px solid var(--c-line);
+  resize: vertical;
+}
+.vault__msg:focus {
+  outline: 0;
+  border-color: var(--c-accent);
+}
+
+.vault__btn {
+  flex: 1;
+  padding: 10px 16px;
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--c-bg);
+  background: var(--c-accent);
+  border: 1px solid var(--c-accent);
+  cursor: pointer;
+  transition: opacity var(--d-fast) var(--ease-out),
+              background var(--d-fast) var(--ease-out);
+}
+.vault__btn:hover { opacity: 0.85; }
+.vault__btn[disabled] { opacity: 0.35; cursor: not-allowed; }
+.vault__btn--ghost {
+  flex: 0 0 auto;
+  background: transparent;
+  color: var(--c-fg-dim);
+  border-color: var(--c-line);
+}
+.vault__btn--ghost:hover { color: var(--c-fg); border-color: var(--c-fg-mute); background: rgba(255,255,255,0.04); }
+
+/* ── Output / verdict ──────────────────────────────── */
+.vault__hex {
+  margin: 0;
+  padding: 10px 12px;
+  font-family: var(--f-mono);
+  font-size: 11px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--c-accent);
+  background: #050505;
+  border: 1px solid var(--c-line);
+  max-height: 140px;
+  overflow-y: auto;
+  word-break: break-all;
+  white-space: pre-wrap;
+  scrollbar-width: thin;
+}
+.vault__hex::-webkit-scrollbar { width: 4px; }
+.vault__hex::-webkit-scrollbar-thumb { background: var(--c-line); }
+
+.vault__verdict {
+  padding: 10px 12px;
+  font-family: var(--f-mono);
+  font-size: var(--t-sm);
+  line-height: 1.5;
+  background: #050505;
+  border: 1px solid var(--c-line);
+  min-height: 44px;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+.vault__verdict[data-state="success"] {
+  color: var(--c-accent);
+  border-color: var(--c-accent);
+  box-shadow: inset 0 0 12px rgba(255,165,80,0.08);
+}
+.vault__verdict[data-state="fail"] {
+  color: #ff6b6b;
+  border-color: #5a1f1f;
+  animation: glitch 0.36s steps(2, end) 2;
+}
+.vault__verdict[data-state="info"] { color: var(--c-fg-dim); }
+.vault__verdict__title {
+  display: block;
+  font-size: 10px;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  opacity: 0.85;
+}
+
+@keyframes glitch {
+  0%   { transform: translate(0,0); }
+  25%  { transform: translate(-2px,1px); }
+  50%  { transform: translate(2px,-1px); }
+  75%  { transform: translate(-1px,2px); }
+  100% { transform: translate(0,0); }
+}
+
+/* ── Hex stream typing animation ───────────────────── */
+.vault__hex--typing::after {
+  content: '▌';
+  animation: blink 0.8s steps(2, end) infinite;
+  color: var(--c-accent);
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ── Mobile ─────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .vault {
+    max-height: none;
+    overflow: visible;
+  }
+  .vault__stones { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .vault-stone__name { font-size: 11px; }
+  .vault-stone__fp { display: none; }
+}

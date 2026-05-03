@@ -9,6 +9,7 @@ import { initStation4 } from './station-4-stones.js';
 import { initCarousel } from './carousel.js';
 import { initModals } from './modals.js';
 import { initLightbox } from './lightbox.js';
+import { initVault } from './vault.js';
 
 async function boot() {
   await initI18n();
@@ -19,6 +20,7 @@ async function boot() {
   initLightbox();
   initPhotoGrid();
   initStation4();
+  initVault();
 }
 
 if (document.readyState === 'loading') {
