@@ -291,6 +291,54 @@
     #opt-13 { --f-en: 'Inria Serif', Georgia, serif;       --f-he: 'Frank Ruhl Libre', serif; }
     #opt-14 { --f-en: 'Literata', Georgia, serif;          --f-he: 'David Libre', serif; }
     #opt-15 { --f-en: 'Young Serif', Georgia, serif;       --f-he: 'Frank Ruhl Libre', serif; }
+
+    /* ── Local-only options (use fonts installed on this machine) ─── */
+    .badge.is-local {
+      background: #b8916b;
+      color: #0a0a0a;
+    }
+    .section-divider {
+      max-width: 1280px;
+      margin: 5rem auto 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px dashed var(--c-line);
+    }
+    .section-divider .eyebrow {
+      font-family: var(--f-mono);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #b8916b;
+      margin-bottom: 0.75rem;
+    }
+    .section-divider h2 {
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+    }
+    .section-divider p {
+      color: var(--c-fg-dim);
+      max-width: 70ch;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .section-divider p + p { margin-top: 0.75rem; }
+
+    /* Local trial Hebrew fonts — pair every option with Newsreader EN.
+     * These are loaded from the local OS font cache (no network). They will
+     * only render correctly on a machine that has these trial fonts installed. */
+    #opt-16 { --f-en: 'Newsreader', Georgia, serif; --f-he: 'Abraham TRIAL', 'Frank Ruhl Libre', serif; }
+    #opt-17 { --f-en: 'Newsreader', Georgia, serif; --f-he: 'Hadassah Friedlaender TRIAL', 'Frank Ruhl Libre', serif; }
+    #opt-18 { --f-en: 'Newsreader', Georgia, serif; --f-he: 'Narkiss Hadash TRIAL', 'Frank Ruhl Libre', serif; }
+    #opt-19 { --f-en: 'Newsreader', Georgia, serif; --f-he: 'Narkiss Shulamit TRIAL', 'Frank Ruhl Libre', serif; }
+    #opt-20 { --f-en: 'Newsreader', Georgia, serif; --f-he: 'Romema Spitzer TRIAL', 'Frank Ruhl Libre', serif; }
+    #opt-21 { --f-en: 'Newsreader', Georgia, serif; --f-he: 'Gronemann TRIAL', 'Frank Ruhl Libre', serif; }
+    /* Gronemann ships with Bold only — force everything in the HE col to weight 700 so the browser doesn't fall back. */
+    #opt-21 .col[lang="he"] * { font-weight: 700; }
+    #opt-22 { --f-en: 'Newsreader', Georgia, serif; --f-he: 'Neoklass TRIAL', 'Frank Ruhl Libre', serif; }
   </style>
 </head>
 <body>
@@ -319,6 +367,7 @@
       <li><strong>12 — DM Serif Display + Bellefair</strong> &nbsp;<em>modern Didone, confident editorial</em></li>
       <li><strong>13 — Inria Serif + Frank Ruhl Libre</strong> &nbsp;<em>French institutional, scholarly calm</em></li>
       <li><strong>14 — Literata + David Libre</strong> &nbsp;<em>book serif, optimised for long-form reading</em></li>
+      <li><strong>16–22 — Newsreader + your installed trial Hebrew fonts</strong> &nbsp;<em>local-only previews (Abraham, Hadassah Friedlaender, Narkiss Hadash, Narkiss Shulamit, Romema Spitzer, Gronemann, Neoklass)</em></li>
       <li><strong>15 — Young Serif + Frank Ruhl Libre</strong> &nbsp;<em>contemporary historical revival, distinctive</em></li>
     </ol>
   </header>
@@ -978,6 +1027,335 @@
         <p class="option__title">Young Serif <em>EN</em> &nbsp;·&nbsp; Frank Ruhl Libre <em>HE</em></p>
       </div>
       <p class="option__note">Contemporary revival of historical broadsheet types. Distinctive caps, single weight — display-character text serif.</p>
+    </div>
+
+    <div class="preview">
+      <div class="col" lang="en">
+        <span class="col__lang-label">English · LTR</span>
+        <h2 class="sample-title">Speaking Matter</h2>
+        <p class="sample-sub">Digital anatomy of local stones. A journey transforming raw geological matter from Jerusalem, the Galilee, and the Golan into physical stamps, cryptographic keys, and new fictional identities.</p>
+        <div class="sample-chips">
+          <span class="chip is-active"><span class="num">01</span><span class="lab">Stamps</span></span>
+          <span class="chip"><span class="num">02</span><span class="lab">Reliefs</span></span>
+          <span class="chip"><span class="num">03</span><span class="lab">Code</span></span>
+          <span class="chip"><span class="num">04</span><span class="lab">Vault</span></span>
+        </div>
+        <p class="sample-lead">A stone becomes a seal.</p>
+        <button class="sample-button" type="button">Read more →</button>
+        <h3 class="sample-modal-title">Stamps press into clay.</h3>
+        <p class="sample-prose">When a hand grasps a stone and presses it into soft clay, it repeats an ancient gesture of witness. The stone's three-dimensional scan becomes a <strong>stamp</strong> — a personal claim on the place where it rests.</p>
+        <p class="sample-prose">Two geological times meet: stone formed millions of years ago, soft clay receiving its signature in this moment. The mute makes itself heard, and leaves in the world a <em>physical fingerprint of place</em>.</p>
+      </div>
+
+      <div class="col" lang="he">
+        <span class="col__lang-label">עברית · RTL</span>
+        <h2 class="sample-title">דּוֹמֵם מְדַבֵּר</h2>
+        <p class="sample-sub">אנטומיה דיגיטלית של אבנים מקומיות מירושלים, הגליל והגולן. מסע הממיר חומר גיאולוגי אילם לחותמות ותבליטים, קוד, מפתחות הצפנה וזהויות חדשות.</p>
+        <div class="sample-chips">
+          <span class="chip is-active"><span class="num">01</span><span class="lab">חותמות</span></span>
+          <span class="chip"><span class="num">02</span><span class="lab">תבליטים</span></span>
+          <span class="chip"><span class="num">03</span><span class="lab">קוד</span></span>
+          <span class="chip"><span class="num">04</span><span class="lab">כספת</span></span>
+        </div>
+        <p class="sample-lead">אבן הופכת לחותם.</p>
+        <button class="sample-button" type="button">קרא/י עוד ←</button>
+        <h3 class="sample-modal-title">החותמות</h3>
+        <p class="sample-prose">כשידו של אדם אוחזת באבן ולוחצת אותה אל חימר רך, היא חוזרת על מחווה קדומה של חתימה. חותמת האבן, אשר מבוססת על הסריקה התלת ממדית של האבן, מהווה כאן <strong>חיבור אישי</strong> לסביבה בה פועל החותם כמעין חתימה נוטריונית של המרחב.</p>
+        <p class="sample-prose">שני זמנים גיאולוגיים נפגשים: האבן שנוצרה לפני מיליוני שנים, והחימר הרך שמקבל את חתימתה ברגע הזה. הדומם משמיע את קולו, ומותיר בעולם <em>טביעת אצבע פיזית של המקום</em>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-divider">
+    <p class="eyebrow">Local fonts · this browser only</p>
+    <h2>Hebrew options from your installed type library.</h2>
+    <p>The options below render Hebrew using fonts already installed on your computer (Abraham, Hadassah Friedlaender, Narkiss Hadash, Narkiss Shulamit, Romema Spitzer, Gronemann, Neoklass — all <em>TRIAL</em> versions). They will <strong>not</strong> render correctly for anyone else visiting this URL — only on this machine.</p>
+    <p>If you fall in love with one, the next step is to acquire a webfont licence from the foundry (Masterfont / HaTavim / Yanek Iontef). I'll then self-host the licensed <code>.woff2</code> on the portal so the live site shows it for everyone.</p>
+  </section>
+
+  <section class="option" id="opt-16">
+    <div class="option__head">
+      <div>
+        <p class="option__num">Option 16</p>
+        <p class="option__title">Newsreader <em>EN</em> &nbsp;·&nbsp; Abraham TRIAL <em>HE</em><span class="badge is-local">local only</span></p>
+      </div>
+      <p class="option__note">Modern humanist Hebrew serif by Yanek Iontef. Calm, contemporary, very even rhythm — the one you asked for.</p>
+    </div>
+
+    <div class="preview">
+      <div class="col" lang="en">
+        <span class="col__lang-label">English · LTR</span>
+        <h2 class="sample-title">Speaking Matter</h2>
+        <p class="sample-sub">Digital anatomy of local stones. A journey transforming raw geological matter from Jerusalem, the Galilee, and the Golan into physical stamps, cryptographic keys, and new fictional identities.</p>
+        <div class="sample-chips">
+          <span class="chip is-active"><span class="num">01</span><span class="lab">Stamps</span></span>
+          <span class="chip"><span class="num">02</span><span class="lab">Reliefs</span></span>
+          <span class="chip"><span class="num">03</span><span class="lab">Code</span></span>
+          <span class="chip"><span class="num">04</span><span class="lab">Vault</span></span>
+        </div>
+        <p class="sample-lead">A stone becomes a seal.</p>
+        <button class="sample-button" type="button">Read more →</button>
+        <h3 class="sample-modal-title">Stamps press into clay.</h3>
+        <p class="sample-prose">When a hand grasps a stone and presses it into soft clay, it repeats an ancient gesture of witness. The stone's three-dimensional scan becomes a <strong>stamp</strong> — a personal claim on the place where it rests.</p>
+        <p class="sample-prose">Two geological times meet: stone formed millions of years ago, soft clay receiving its signature in this moment. The mute makes itself heard, and leaves in the world a <em>physical fingerprint of place</em>.</p>
+      </div>
+
+      <div class="col" lang="he">
+        <span class="col__lang-label">עברית · RTL</span>
+        <h2 class="sample-title">דּוֹמֵם מְדַבֵּר</h2>
+        <p class="sample-sub">אנטומיה דיגיטלית של אבנים מקומיות מירושלים, הגליל והגולן. מסע הממיר חומר גיאולוגי אילם לחותמות ותבליטים, קוד, מפתחות הצפנה וזהויות חדשות.</p>
+        <div class="sample-chips">
+          <span class="chip is-active"><span class="num">01</span><span class="lab">חותמות</span></span>
+          <span class="chip"><span class="num">02</span><span class="lab">תבליטים</span></span>
+          <span class="chip"><span class="num">03</span><span class="lab">קוד</span></span>
+          <span class="chip"><span class="num">04</span><span class="lab">כספת</span></span>
+        </div>
+        <p class="sample-lead">אבן הופכת לחותם.</p>
+        <button class="sample-button" type="button">קרא/י עוד ←</button>
+        <h3 class="sample-modal-title">החותמות</h3>
+        <p class="sample-prose">כשידו של אדם אוחזת באבן ולוחצת אותה אל חימר רך, היא חוזרת על מחווה קדומה של חתימה. חותמת האבן, אשר מבוססת על הסריקה התלת ממדית של האבן, מהווה כאן <strong>חיבור אישי</strong> לסביבה בה פועל החותם כמעין חתימה נוטריונית של המרחב.</p>
+        <p class="sample-prose">שני זמנים גיאולוגיים נפגשים: האבן שנוצרה לפני מיליוני שנים, והחימר הרך שמקבל את חתימתה ברגע הזה. הדומם משמיע את קולו, ומותיר בעולם <em>טביעת אצבע פיזית של המקום</em>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="option" id="opt-17">
+    <div class="option__head">
+      <div>
+        <p class="option__num">Option 17</p>
+        <p class="option__title">Newsreader <em>EN</em> &nbsp;·&nbsp; Hadassah Friedlaender TRIAL <em>HE</em><span class="badge is-local">local only</span></p>
+      </div>
+      <p class="option__note">Henri Friedlaender's Hadassah, redrawn. Canonical Israeli book serif — warm, scholarly, deeply traditional.</p>
+    </div>
+
+    <div class="preview">
+      <div class="col" lang="en">
+        <span class="col__lang-label">English · LTR</span>
+        <h2 class="sample-title">Speaking Matter</h2>
+        <p class="sample-sub">Digital anatomy of local stones. A journey transforming raw geological matter from Jerusalem, the Galilee, and the Golan into physical stamps, cryptographic keys, and new fictional identities.</p>
+        <div class="sample-chips">
+          <span class="chip is-active"><span class="num">01</span><span class="lab">Stamps</span></span>
+          <span class="chip"><span class="num">02</span><span class="lab">Reliefs</span></span>
+          <span class="chip"><span class="num">03</span><span class="lab">Code</span></span>
+          <span class="chip"><span class="num">04</span><span class="lab">Vault</span></span>
+        </div>
+        <p class="sample-lead">A stone becomes a seal.</p>
+        <button class="sample-button" type="button">Read more →</button>
+        <h3 class="sample-modal-title">Stamps press into clay.</h3>
+        <p class="sample-prose">When a hand grasps a stone and presses it into soft clay, it repeats an ancient gesture of witness. The stone's three-dimensional scan becomes a <strong>stamp</strong> — a personal claim on the place where it rests.</p>
+        <p class="sample-prose">Two geological times meet: stone formed millions of years ago, soft clay receiving its signature in this moment. The mute makes itself heard, and leaves in the world a <em>physical fingerprint of place</em>.</p>
+      </div>
+
+      <div class="col" lang="he">
+        <span class="col__lang-label">עברית · RTL</span>
+        <h2 class="sample-title">דּוֹמֵם מְדַבֵּר</h2>
+        <p class="sample-sub">אנטומיה דיגיטלית של אבנים מקומיות מירושלים, הגליל והגולן. מסע הממיר חומר גיאולוגי אילם לחותמות ותבליטים, קוד, מפתחות הצפנה וזהויות חדשות.</p>
+        <div class="sample-chips">
+          <span class="chip is-active"><span class="num">01</span><span class="lab">חותמות</span></span>
+          <span class="chip"><span class="num">02</span><span class="lab">תבליטים</span></span>
+          <span class="chip"><span class="num">03</span><span class="lab">קוד</span></span>
+          <span class="chip"><span class="num">04</span><span class="lab">כספת</span></span>
+        </div>
+        <p class="sample-lead">אבן הופכת לחותם.</p>
+        <button class="sample-button" type="button">קרא/י עוד ←</button>
+        <h3 class="sample-modal-title">החותמות</h3>
+        <p class="sample-prose">כשידו של אדם אוחזת באבן ולוחצת אותה אל חימר רך, היא חוזרת על מחווה קדומה של חתימה. חותמת האבן, אשר מבוססת על הסריקה התלת ממדית של האבן, מהווה כאן <strong>חיבור אישי</strong> לסביבה בה פועל החותם כמעין חתימה נוטריונית של המרחב.</p>
+        <p class="sample-prose">שני זמנים גיאולוגיים נפגשים: האבן שנוצרה לפני מיליוני שנים, והחימר הרך שמקבל את חתימתה ברגע הזה. הדומם משמיע את קולו, ומותיר בעולם <em>טביעת אצבע פיזית של המקום</em>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="option" id="opt-18">
+    <div class="option__head">
+      <div>
+        <p class="option__num">Option 18</p>
+        <p class="option__title">Newsreader <em>EN</em> &nbsp;·&nbsp; Narkiss Hadash TRIAL <em>HE</em><span class="badge is-local">local only</span></p>
+      </div>
+      <p class="option__note">Modernised Narkiss. Classic Hebrew serif voice with cleaner, more contemporary terminals.</p>
+    </div>
+
+    <div class="preview">
+      <div class="col" lang="en">
+        <span class="col__lang-label">English · LTR</span>
+        <h2 class="sample-title">Speaking Matter</h2>
+        <p class="sample-sub">Digital anatomy of local stones. A journey transforming raw geological matter from Jerusalem, the Galilee, and the Golan into physical stamps, cryptographic keys, and new fictional identities.</p>
+        <div class="sample-chips">
+          <span class="chip is-active"><span class="num">01</span><span class="lab">Stamps</span></span>
+          <span class="chip"><span class="num">02</span><span class="lab">Reliefs</span></span>
+          <span class="chip"><span class="num">03</span><span class="lab">Code</span></span>
+          <span class="chip"><span class="num">04</span><span class="lab">Vault</span></span>
+        </div>
+        <p class="sample-lead">A stone becomes a seal.</p>
+        <button class="sample-button" type="button">Read more →</button>
+        <h3 class="sample-modal-title">Stamps press into clay.</h3>
+        <p class="sample-prose">When a hand grasps a stone and presses it into soft clay, it repeats an ancient gesture of witness. The stone's three-dimensional scan becomes a <strong>stamp</strong> — a personal claim on the place where it rests.</p>
+        <p class="sample-prose">Two geological times meet: stone formed millions of years ago, soft clay receiving its signature in this moment. The mute makes itself heard, and leaves in the world a <em>physical fingerprint of place</em>.</p>
+      </div>
+
+      <div class="col" lang="he">
+        <span class="col__lang-label">עברית · RTL</span>
+        <h2 class="sample-title">דּוֹמֵם מְדַבֵּר</h2>
+        <p class="sample-sub">אנטומיה דיגיטלית של אבנים מקומיות מירושלים, הגליל והגולן. מסע הממיר חומר גיאולוגי אילם לחותמות ותבליטים, קוד, מפתחות הצפנה וזהויות חדשות.</p>
+        <div class="sample-chips">
+          <span class="chip is-active"><span class="num">01</span><span class="lab">חותמות</span></span>
+          <span class="chip"><span class="num">02</span><span class="lab">תבליטים</span></span>
+          <span class="chip"><span class="num">03</span><span class="lab">קוד</span></span>
+          <span class="chip"><span class="num">04</span><span class="lab">כספת</span></span>
+        </div>
+        <p class="sample-lead">אבן הופכת לחותם.</p>
+        <button class="sample-button" type="button">קרא/י עוד ←</button>
+        <h3 class="sample-modal-title">החותמות</h3>
+        <p class="sample-prose">כשידו של אדם אוחזת באבן ולוחצת אותה אל חימר רך, היא חוזרת על מחווה קדומה של חתימה. חותמת האבן, אשר מבוססת על הסריקה התלת ממדית של האבן, מהווה כאן <strong>חיבור אישי</strong> לסביבה בה פועל החותם כמעין חתימה נוטריונית של המרחב.</p>
+        <p class="sample-prose">שני זמנים גיאולוגיים נפגשים: האבן שנוצרה לפני מיליוני שנים, והחימר הרך שמקבל את חתימתה ברגע הזה. הדומם משמיע את קולו, ומותיר בעולם <em>טביעת אצבע פיזית של המקום</em>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="option" id="opt-19">
+    <div class="option__head">
+      <div>
+        <p class="option__num">Option 19</p>
+        <p class="option__title">Newsreader <em>EN</em> &nbsp;·&nbsp; Narkiss Shulamit TRIAL <em>HE</em><span class="badge is-local">local only</span></p>
+      </div>
+      <p class="option__note">Original Narkiss Shulamit family — historic Hebrew serif with multiple widths. Literary, period feel.</p>
+    </div>
+
+    <div class="preview">
+      <div class="col" lang="en">
+        <span class="col__lang-label">English · LTR</span>
+        <h2 class="sample-title">Speaking Matter</h2>
+        <p class="sample-sub">Digital anatomy of local stones. A journey transforming raw geological matter from Jerusalem, the Galilee, and the Golan into physical stamps, cryptographic keys, and new fictional identities.</p>
+        <div class="sample-chips">
+          <span class="chip is-active"><span class="num">01</span><span class="lab">Stamps</span></span>
+          <span class="chip"><span class="num">02</span><span class="lab">Reliefs</span></span>
+          <span class="chip"><span class="num">03</span><span class="lab">Code</span></span>
+          <span class="chip"><span class="num">04</span><span class="lab">Vault</span></span>
+        </div>
+        <p class="sample-lead">A stone becomes a seal.</p>
+        <button class="sample-button" type="button">Read more →</button>
+        <h3 class="sample-modal-title">Stamps press into clay.</h3>
+        <p class="sample-prose">When a hand grasps a stone and presses it into soft clay, it repeats an ancient gesture of witness. The stone's three-dimensional scan becomes a <strong>stamp</strong> — a personal claim on the place where it rests.</p>
+        <p class="sample-prose">Two geological times meet: stone formed millions of years ago, soft clay receiving its signature in this moment. The mute makes itself heard, and leaves in the world a <em>physical fingerprint of place</em>.</p>
+      </div>
+
+      <div class="col" lang="he">
+        <span class="col__lang-label">עברית · RTL</span>
+        <h2 class="sample-title">דּוֹמֵם מְדַבֵּר</h2>
+        <p class="sample-sub">אנטומיה דיגיטלית של אבנים מקומיות מירושלים, הגליל והגולן. מסע הממיר חומר גיאולוגי אילם לחותמות ותבליטים, קוד, מפתחות הצפנה וזהויות חדשות.</p>
+        <div class="sample-chips">
+          <span class="chip is-active"><span class="num">01</span><span class="lab">חותמות</span></span>
+          <span class="chip"><span class="num">02</span><span class="lab">תבליטים</span></span>
+          <span class="chip"><span class="num">03</span><span class="lab">קוד</span></span>
+          <span class="chip"><span class="num">04</span><span class="lab">כספת</span></span>
+        </div>
+        <p class="sample-lead">אבן הופכת לחותם.</p>
+        <button class="sample-button" type="button">קרא/י עוד ←</button>
+        <h3 class="sample-modal-title">החותמות</h3>
+        <p class="sample-prose">כשידו של אדם אוחזת באבן ולוחצת אותה אל חימר רך, היא חוזרת על מחווה קדומה של חתימה. חותמת האבן, אשר מבוססת על הסריקה התלת ממדית של האבן, מהווה כאן <strong>חיבור אישי</strong> לסביבה בה פועל החותם כמעין חתימה נוטריונית של המרחב.</p>
+        <p class="sample-prose">שני זמנים גיאולוגיים נפגשים: האבן שנוצרה לפני מיליוני שנים, והחימר הרך שמקבל את חתימתה ברגע הזה. הדומם משמיע את קולו, ומותיר בעולם <em>טביעת אצבע פיזית של המקום</em>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="option" id="opt-20">
+    <div class="option__head">
+      <div>
+        <p class="option__num">Option 20</p>
+        <p class="option__title">Newsreader <em>EN</em> &nbsp;·&nbsp; Romema Spitzer TRIAL <em>HE</em><span class="badge is-local">local only</span></p>
+      </div>
+      <p class="option__note">Spitzer's Romema. Sharp, refined Hebrew serif with a slight broadsheet/editorial energy.</p>
+    </div>
+
+    <div class="preview">
+      <div class="col" lang="en">
+        <span class="col__lang-label">English · LTR</span>
+        <h2 class="sample-title">Speaking Matter</h2>
+        <p class="sample-sub">Digital anatomy of local stones. A journey transforming raw geological matter from Jerusalem, the Galilee, and the Golan into physical stamps, cryptographic keys, and new fictional identities.</p>
+        <div class="sample-chips">
+          <span class="chip is-active"><span class="num">01</span><span class="lab">Stamps</span></span>
+          <span class="chip"><span class="num">02</span><span class="lab">Reliefs</span></span>
+          <span class="chip"><span class="num">03</span><span class="lab">Code</span></span>
+          <span class="chip"><span class="num">04</span><span class="lab">Vault</span></span>
+        </div>
+        <p class="sample-lead">A stone becomes a seal.</p>
+        <button class="sample-button" type="button">Read more →</button>
+        <h3 class="sample-modal-title">Stamps press into clay.</h3>
+        <p class="sample-prose">When a hand grasps a stone and presses it into soft clay, it repeats an ancient gesture of witness. The stone's three-dimensional scan becomes a <strong>stamp</strong> — a personal claim on the place where it rests.</p>
+        <p class="sample-prose">Two geological times meet: stone formed millions of years ago, soft clay receiving its signature in this moment. The mute makes itself heard, and leaves in the world a <em>physical fingerprint of place</em>.</p>
+      </div>
+
+      <div class="col" lang="he">
+        <span class="col__lang-label">עברית · RTL</span>
+        <h2 class="sample-title">דּוֹמֵם מְדַבֵּר</h2>
+        <p class="sample-sub">אנטומיה דיגיטלית של אבנים מקומיות מירושלים, הגליל והגולן. מסע הממיר חומר גיאולוגי אילם לחותמות ותבליטים, קוד, מפתחות הצפנה וזהויות חדשות.</p>
+        <div class="sample-chips">
+          <span class="chip is-active"><span class="num">01</span><span class="lab">חותמות</span></span>
+          <span class="chip"><span class="num">02</span><span class="lab">תבליטים</span></span>
+          <span class="chip"><span class="num">03</span><span class="lab">קוד</span></span>
+          <span class="chip"><span class="num">04</span><span class="lab">כספת</span></span>
+        </div>
+        <p class="sample-lead">אבן הופכת לחותם.</p>
+        <button class="sample-button" type="button">קרא/י עוד ←</button>
+        <h3 class="sample-modal-title">החותמות</h3>
+        <p class="sample-prose">כשידו של אדם אוחזת באבן ולוחצת אותה אל חימר רך, היא חוזרת על מחווה קדומה של חתימה. חותמת האבן, אשר מבוססת על הסריקה התלת ממדית של האבן, מהווה כאן <strong>חיבור אישי</strong> לסביבה בה פועל החותם כמעין חתימה נוטריונית של המרחב.</p>
+        <p class="sample-prose">שני זמנים גיאולוגיים נפגשים: האבן שנוצרה לפני מיליוני שנים, והחימר הרך שמקבל את חתימתה ברגע הזה. הדומם משמיע את קולו, ומותיר בעולם <em>טביעת אצבע פיזית של המקום</em>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="option" id="opt-21">
+    <div class="option__head">
+      <div>
+        <p class="option__num">Option 21</p>
+        <p class="option__title">Newsreader <em>EN</em> &nbsp;·&nbsp; Gronemann TRIAL <em>HE</em><span class="badge is-local">local only</span></p>
+      </div>
+      <p class="option__note">Bold weight only — high-impact display Hebrew. Test it as a heading-only voice. (Body falls back to its default weight.)</p>
+    </div>
+
+    <div class="preview">
+      <div class="col" lang="en">
+        <span class="col__lang-label">English · LTR</span>
+        <h2 class="sample-title">Speaking Matter</h2>
+        <p class="sample-sub">Digital anatomy of local stones. A journey transforming raw geological matter from Jerusalem, the Galilee, and the Golan into physical stamps, cryptographic keys, and new fictional identities.</p>
+        <div class="sample-chips">
+          <span class="chip is-active"><span class="num">01</span><span class="lab">Stamps</span></span>
+          <span class="chip"><span class="num">02</span><span class="lab">Reliefs</span></span>
+          <span class="chip"><span class="num">03</span><span class="lab">Code</span></span>
+          <span class="chip"><span class="num">04</span><span class="lab">Vault</span></span>
+        </div>
+        <p class="sample-lead">A stone becomes a seal.</p>
+        <button class="sample-button" type="button">Read more →</button>
+        <h3 class="sample-modal-title">Stamps press into clay.</h3>
+        <p class="sample-prose">When a hand grasps a stone and presses it into soft clay, it repeats an ancient gesture of witness. The stone's three-dimensional scan becomes a <strong>stamp</strong> — a personal claim on the place where it rests.</p>
+        <p class="sample-prose">Two geological times meet: stone formed millions of years ago, soft clay receiving its signature in this moment. The mute makes itself heard, and leaves in the world a <em>physical fingerprint of place</em>.</p>
+      </div>
+
+      <div class="col" lang="he">
+        <span class="col__lang-label">עברית · RTL</span>
+        <h2 class="sample-title">דּוֹמֵם מְדַבֵּר</h2>
+        <p class="sample-sub">אנטומיה דיגיטלית של אבנים מקומיות מירושלים, הגליל והגולן. מסע הממיר חומר גיאולוגי אילם לחותמות ותבליטים, קוד, מפתחות הצפנה וזהויות חדשות.</p>
+        <div class="sample-chips">
+          <span class="chip is-active"><span class="num">01</span><span class="lab">חותמות</span></span>
+          <span class="chip"><span class="num">02</span><span class="lab">תבליטים</span></span>
+          <span class="chip"><span class="num">03</span><span class="lab">קוד</span></span>
+          <span class="chip"><span class="num">04</span><span class="lab">כספת</span></span>
+        </div>
+        <p class="sample-lead">אבן הופכת לחותם.</p>
+        <button class="sample-button" type="button">קרא/י עוד ←</button>
+        <h3 class="sample-modal-title">החותמות</h3>
+        <p class="sample-prose">כשידו של אדם אוחזת באבן ולוחצת אותה אל חימר רך, היא חוזרת על מחווה קדומה של חתימה. חותמת האבן, אשר מבוססת על הסריקה התלת ממדית של האבן, מהווה כאן <strong>חיבור אישי</strong> לסביבה בה פועל החותם כמעין חתימה נוטריונית של המרחב.</p>
+        <p class="sample-prose">שני זמנים גיאולוגיים נפגשים: האבן שנוצרה לפני מיליוני שנים, והחימר הרך שמקבל את חתימתה ברגע הזה. הדומם משמיע את קולו, ומותיר בעולם <em>טביעת אצבע פיזית של המקום</em>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="option" id="opt-22">
+    <div class="option__head">
+      <div>
+        <p class="option__num">Option 22</p>
+        <p class="option__title">Newsreader <em>EN</em> &nbsp;·&nbsp; Neoklass TRIAL <em>HE</em><span class="badge is-local">local only</span></p>
+      </div>
+      <p class="option__note">Neoclassical Hebrew with true italic variants — extremely rare in Hebrew type. Modern, slightly architectural.</p>
     </div>
 
     <div class="preview">
