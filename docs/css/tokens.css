@@ -150,6 +150,20 @@ code, pre, .mono { font-family: var(--f-mono); }
   font-family: var(--f-sans-he);
   letter-spacing: 0;
 }
+/* Carousel chrome: prev/next buttons, chip labels at the top of the
+ * stations slider, and the swipe-hint. These selectors hardcode
+ * --f-sans in carousel.css, so without this override they'd render
+ * as Source Serif 4 even in Hebrew mode. Also strip uppercase and
+ * the wide tracking which only make sense for the Latin column. */
+:root.lang-he .carousel-btn,
+:root.lang-he .carousel-btn__label,
+:root.lang-he .carousel-dots button,
+:root.lang-he .carousel-dots .dot-label,
+:root.lang-he .carousel-swipe-hint {
+  font-family: var(--f-sans-he);
+  text-transform: none;
+  letter-spacing: 0;
+}
 /* Hebrew content blocks that stay scoped (legacy) */
 [lang="he"] {
   font-family: var(--f-sans-he);
