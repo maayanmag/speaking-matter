@@ -1,0 +1,49 @@
+/* Speaking Matter — locally-installed / CDN-hosted Hebrew fonts
+ * ────────────────────────────────────────────────────────────────
+ * The Hebrew side of the portal uses Abraham TRIAL (Masterfont).
+ * The font files live OFF GitHub (TRIAL license disallows
+ * redistribution) and are served from a private Netlify subdomain:
+ *
+ *     https://speaking-matter-fonts.netlify.app/
+ *
+ * On the designer's machine the OS-installed copy is used first
+ * (via local()), so no network fetch happens. For everyone else
+ * the .woff2 is fetched from Netlify (CORS-enabled).
+ *
+ * Fallback (if the fetch ever fails) is Frank Ruhl Libre, which is
+ * loaded from Google Fonts in index.html — see tokens.css for the
+ * full Hebrew stack on --f-serif-he.
+ */
+
+@font-face {
+  font-family: 'Abraham TRIAL';
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  src: local('Abraham TRIAL'),
+       url('https://speaking-matter-fonts.netlify.app/abraham/abraham-light.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Abraham TRIAL';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: local('Abraham TRIAL'),
+       url('https://speaking-matter-fonts.netlify.app/abraham/abraham-regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Abraham TRIAL';
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: local('Abraham TRIAL'),
+       url('https://speaking-matter-fonts.netlify.app/abraham/abraham-medium.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Abraham TRIAL';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: local('Abraham TRIAL'),
+       url('https://speaking-matter-fonts.netlify.app/abraham/abraham-bold.woff2') format('woff2');
+}

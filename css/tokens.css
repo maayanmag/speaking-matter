@@ -21,17 +21,23 @@
   --c-danger:        #c8543a;    /* dramatic delete / destruction */
 
   /* ─── Type ─── */
-  /* Serif everywhere — Newsreader for English (warm, exhibition-catalogue),
-   * Frank Ruhl Libre for Hebrew (humanist, calligraphic). Both serifs are
-   * used for body prose AND for what was previously sans (titles, UI, nav,
-   * buttons), so the whole portal reads as a single serif voice.
-   * --f-sans is kept as an alias to the serif stack so legacy references
-   * resolve to serif without churn. */
-  --f-serif:    'Newsreader', 'Source Serif 4', 'Georgia', serif;
+  /* Serif everywhere. English: Source Serif 4 (warm, generous,
+   * exhibition-catalogue). Hebrew: Abraham TRIAL (Masterfont) —
+   * humanist, lightly geometric, sits naturally next to Source Serif 4.
+   * Both are used for body prose AND for what was previously sans
+   * (titles, UI, nav, buttons), so the whole portal reads as a single
+   * serif voice. --f-sans is kept as an alias so legacy references
+   * resolve to serif without churn.
+   *
+   * Abraham TRIAL files are not in this repo (TRIAL license forbids
+   * redistribution) — they're served from speaking-matter-fonts.netlify.app
+   * via @font-face rules in css/fonts-local.css. Frank Ruhl Libre stays
+   * in the chain as a safe Google-Fonts fallback. */
+  --f-serif:    'Source Serif 4', 'Georgia', serif;
   --f-sans:     var(--f-serif);
   --f-mono: 'JetBrains Mono', 'SF Mono', 'Menlo', 'Consolas', monospace;
   /* Hebrew serif (used for both prose and chrome). */
-  --f-serif-he: 'Frank Ruhl Libre', 'David', 'Heebo', serif;
+  --f-serif-he: 'Abraham TRIAL', 'Frank Ruhl Libre', 'David', serif;
   --f-sans-he:  var(--f-serif-he);
 
   /* Modular type scale — base 18px, ratio 1.25 */
