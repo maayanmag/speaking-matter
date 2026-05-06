@@ -169,10 +169,11 @@
   scroll-snap-stop: always;
   min-height: 80svh;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  grid-template-columns: 1fr 1fr;
   gap: var(--s-3);
   padding: var(--s-2) clamp(var(--s-2), 3vw, var(--s-4)) clamp(var(--s-2), 3vw, var(--s-4));
   align-items: start;
+  overflow: hidden;
 }
 
 .card__text {
@@ -180,6 +181,7 @@
   flex-direction: column;
   gap: var(--s-3);
   max-width: 52ch;
+  min-width: 0;
 }
 .card__text > .station__eyebrow,
 .card__text > .station__title { margin: 0; }
