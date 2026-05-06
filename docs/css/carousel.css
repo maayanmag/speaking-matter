@@ -169,8 +169,8 @@
   min-height: 80svh;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
-  gap: var(--s-5);
-  padding: var(--s-2) clamp(var(--s-4), 6vw, var(--s-6)) clamp(var(--s-4), 6vw, var(--s-6));
+  gap: var(--s-3);
+  padding: var(--s-2) clamp(var(--s-2), 3vw, var(--s-4)) clamp(var(--s-2), 3vw, var(--s-4));
   align-items: start;
 }
 
@@ -234,6 +234,7 @@
   height: 100%;
   max-height: 75svh;
   justify-content: center;
+  min-width: 0;
 }
 .card__media .media-frame,
 .card__media .zoomable {
