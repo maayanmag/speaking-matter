@@ -237,6 +237,8 @@
   grid-template-rows: 1fr auto;
   min-height: 70vh;
   overflow: hidden;
+  width: 100%;
+  min-width: 0;
 }
 .ps-viewer:focus-visible {
   outline: 2px solid var(--c-accent);
@@ -336,6 +338,8 @@
   padding: var(--s-2);
   background: var(--c-bg);
   border-top: 1px solid var(--c-line);
+  min-width: 0;
+  overflow: hidden;
 }
 .ps-viewer__nav button {
   font-family: var(--f-mono);

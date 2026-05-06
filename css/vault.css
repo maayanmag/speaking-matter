@@ -16,6 +16,7 @@
   background: rgba(10,10,10,0.55);
   border: 1px solid var(--c-line);
   scrollbar-width: thin;
+  min-width: 0;
 }
 .vault::-webkit-scrollbar { width: 4px; }
 .vault::-webkit-scrollbar-thumb { background: var(--c-line); }
@@ -41,6 +42,8 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--s-1);
+  width: 100%;
+  min-width: 0;
 }
 
 .vault-stone {

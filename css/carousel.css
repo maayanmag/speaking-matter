@@ -8,7 +8,6 @@
   position: relative;
   background: var(--c-bg);
   border-block: 1px solid var(--c-line);
-  overflow: hidden;
 }
 
 .stations__controls {
@@ -169,11 +168,11 @@
   scroll-snap-stop: always;
   min-height: 80svh;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: var(--s-3);
   padding: var(--s-2) clamp(var(--s-2), 3vw, var(--s-4)) clamp(var(--s-2), 3vw, var(--s-4));
   align-items: start;
-  overflow: hidden;
+  min-width: 0;
 }
 
 .card__text {
