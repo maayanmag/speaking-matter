@@ -1,0 +1,68 @@
+#ps-viewer {
+  grid-template-rows: auto minmax(250px, 1fr) auto;
+  min-height: 650px;
+  height: 78svh;
+  max-height: 1000px;
+  background: var(--c-bg);
+}
+#ps-info {
+  position: static;
+  grid-row: 1;
+  max-width: none;
+  padding: clamp(16px, 2vw, 30px);
+  border: 0;
+  border-bottom: 1px solid var(--c-line);
+  background: var(--c-bg);
+  backdrop-filter: none;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+#ps-info h2 { font-size: clamp(28px, 3vw, 48px); font-weight: 400; margin-bottom: 12px; }
+#ps-info .ps-id { margin-bottom: 6px; }
+#ps-info [data-body], #ps-info [data-skin] { font-size: clamp(20px, 2vw, 32px); line-height: 1.35; }
+#ps-info [data-skin] { color: var(--c-fg-dim); }
+#ps-canvas { position: relative; grid-row: 2; min-height: 0; min-width: 0; overflow: hidden; background: #0a0a0a; }
+.ps-media-slot { position: absolute; inset: 0; visibility: hidden; pointer-events: none; }
+.ps-media-slot.is-current { visibility: visible; }
+#ps-canvas .ps-media-slot img, #ps-canvas .ps-media-slot video {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: contain;
+}
+.ps-media-slot[data-poster="true"] video { visibility: hidden; }
+.ps-media-slot[data-poster="false"] img { visibility: hidden; }
+#ps-nav { grid-row: 3; gap: 5px; direction: ltr; justify-content: center; padding: 12px; }
+#ps-nav button { color: var(--c-fg-dim); min-height: 38px; }
+#ps-nav .is-active { color: var(--c-bg); }
+#ps-nav .exhibit-button { font-family: inherit; margin-inline-start: 8px; }
+#ps-loading {
+  inset: auto 12px 68px;
+  padding: 14px;
+  background: var(--c-surface);
+  color: var(--c-fg);
+  z-index: 5;
+  pointer-events: none;
+  letter-spacing: 0;
+  font-family: inherit;
+  text-align: center;
+  font-size: 15px;
+}
+#ps-loading button { pointer-events: auto; }
+#ps-loading button + button { margin-inline-start: 8px; }
+#ps-loading button[hidden], #ps-loading .ps-progress[hidden] { display: none; }
+#ps-loading-text { overflow-wrap: anywhere; }
+#ps-loading.is-hidden { visibility: hidden; }
+#ps-nav button:focus-visible, #ps-loading button:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; }
+@media (max-width: 600px) {
+  #ps-viewer { min-height: 620px; height: 85svh; grid-template-rows: auto minmax(200px, 1fr) auto; }
+  [data-exhibit] #ps-viewer { min-height: 620px; }
+  [data-exhibit] #ps-viewer #ps-info { padding: 16px; }
+  #ps-nav { padding: 8px; gap: 4px; }
+  #ps-nav button { padding: 6px 9px; min-height: 44px; }
+  #ps-loading { bottom: 110px; }
+}

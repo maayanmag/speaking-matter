@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="lang-en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="description" content="Possible Stones — eight material encounters from Speaking Matter.">
+  <title>Possible Stones — Speaking Matter</title>
+  <script>
+    if (new URLSearchParams(location.search).get('lang') === 'he') {
+      document.documentElement.lang = 'he';
+      document.documentElement.dir = 'rtl';
+      document.documentElement.className = 'lang-he';
+      document.title = 'אבנים אפשריות — דומם מדבר';
+    }
+  </script>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/tokens.css">
+  <link rel="stylesheet" href="./css/stones-loop.css">
+  <link rel="stylesheet" href="./css/projection.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="../" class="brand">
+      <span data-copy="en">Speaking Matter</span>
+      <span data-copy="he">דומם מדבר</span>
+    </a>
+    <button type="button" class="exhibit-button" id="exhibit-fullscreen" hidden>
+      <span data-copy="en">Fullscreen</span>
+      <span data-copy="he">מסך מלא</span>
+    </button>
+    <div class="lang-toggle" role="group" aria-label="Language / שפה" dir="ltr">
+      <button type="button" data-lang="en" lang="en">EN</button>
+      <span aria-hidden="true">/</span>
+      <button type="button" data-lang="he" lang="en">HE</button>
+    </div>
+  </header>
+  <p id="exhibit-status" role="status"></p>
+  <main>
+    <h1 class="visually-hidden">
+      <span data-copy="en">Possible Stones</span>
+      <span data-copy="he">אבנים אפשריות</span>
+    </h1>
+    <noscript>
+      <p class="no-script">JavaScript is required to play Possible Stones. Please enable it and reload.
+        <span lang="he" dir="rtl">יש להפעיל JavaScript ולטעון מחדש כדי לצפות באבנים אפשריות.</span>
+      </p>
+    </noscript>
+    <div class="ps-viewer" id="ps-viewer" tabindex="0">
+      <div class="ps-viewer__canvas" id="ps-canvas"></div>
+      <div class="ps-viewer__loading" id="ps-loading" aria-live="polite">
+        <p id="ps-loading-text">
+          <span data-copy="en">Loading stone…</span>
+          <span data-copy="he">טוענים אבן…</span>
+        </p>
+        <div class="ps-progress"><div id="ps-progress-bar"></div></div>
+      </div>
+      <aside class="ps-viewer__info" id="ps-info"></aside>
+      <nav class="ps-viewer__nav" id="ps-nav"></nav>
+    </div>
+  </main>
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>
