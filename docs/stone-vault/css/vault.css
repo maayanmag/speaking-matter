@@ -1,0 +1,125 @@
+.vault {
+  --vault-gold: #d6bf88;
+  padding: 24px;
+  width: 100%;
+  min-width: 0;
+  color: var(--c-fg, #e8e6e1);
+  background: #0a0a0a;
+  border: 1px solid var(--c-line, #333);
+}
+.vault [hidden] { display: none !important; }
+.vault-journey__head, .vault-journey__heading, .vault-journey__foot {
+  display: flex; align-items: center; gap: 22px;
+}
+.vault-journey__head { justify-content: space-between; margin-bottom: 20px; }
+.vault-journey__head h2 { font-size: 16px; font-weight: 400; color: #a6a397; margin: 0; }
+.vault-journey__heading { flex-wrap: wrap; min-height: 50px; }
+.vault-journey__heading h3 { font-size: clamp(25px, 3vw, 44px); font-weight: 400; margin: 0; }
+.vault-journey__heading > span { color: var(--vault-gold); font: 13px monospace; }
+.vault-journey__heading bdi { margin-inline-start: auto; color: #b8b4a8; font-size: 16px; }
+.vault-journey__help { color: #a6a397; font-size: 16px; line-height: 1.45; max-width: 105ch; min-height: 2.9em; margin: 8px 0 0; }
+.vault-journey__stage { position: relative; height: 530px; min-height: 440px; margin-top: 14px; }
+.vault-journey__foot { justify-content: space-between; font: 12px monospace; color: #8e8e82; margin-top: 12px; }
+.vault-scene { position: absolute; inset: 0; animation: vault-scene-in 450ms ease-out; min-width: 0; }
+@keyframes vault-scene-in { from { opacity: 0; translate: 0 12px; } to { opacity: 1; translate: 0 0; } }
+.vault-selection [data-stones] { position: absolute; inset: 0; }
+.vault-selection figure { position: absolute; top: 48%; width: 30%; margin: 0; text-align: center; }
+.vault-selection img { width: 100%; height: clamp(140px, 24vw, 290px); object-fit: contain; }
+.vault-selection figcaption { color: #8c8b80; font-size: clamp(11px, 1.5vw, 18px); padding-top: 18px; }
+.vault-selection .is-selected figcaption { color: var(--vault-gold); }
+.vault-selection .is-selected figcaption::before { content: "●"; display: block; font-size: 8px; margin-bottom: 8px; }
+.vault-geometry canvas { display: block; width: 100%; height: calc(100% - 30px); }
+.vault-geometry__caption { position: absolute; bottom: 0; inset-inline: 0; margin: 0; text-align: center; color: #9b998d; font: 13px monospace; }
+.vault-samples { position: absolute; top: 20%; inset-inline-end: 0; width: 43%; padding: 20px; background: #0a0a0ae8; border-inline-start: 1px solid #5d5745; }
+.vault-samples p { color: var(--vault-gold); font: 13px monospace; margin-bottom: 24px; }
+.vault-samples pre { font: clamp(13px, 1.65vw, 22px)/2 monospace; color: #dbd6c5; white-space: pre; }
+[data-phase="sampling"] .vault-geometry canvas { width: 61%; transition: width 700ms ease; }
+.vault-hash { display: flex; flex-direction: column; justify-content: center; gap: 26px; padding: 2% 2% 5%; }
+.vault-hash__input { display: flex; flex-direction: column; gap: 14px; }
+.vault-hash__input span { color: #b6b1a2; font: 14px monospace; }
+.vault-hash__input code { display: block; max-width: 860px; font: clamp(12px, 1.8vw, 23px)/1.6 monospace; word-spacing: 14px; color: var(--vault-gold); }
+.vault-hash__operations { display: flex; align-items: center; gap: 25px; font: clamp(12px, 1.5vw, 18px) monospace; color: #b9b9ad; }
+.vault-registers { display: grid; grid-template-columns: repeat(8, 1fr); gap: 12px; }
+.vault-registers > div { border-top: 2px solid #8d7952; padding: 16px 0; display: flex; flex-direction: column; gap: 12px; }
+.vault-registers span { color: #817d71; font: 14px monospace; }
+.vault-registers code { font: clamp(12px, 1.75vw, 25px) monospace; color: #e5ddc7; }
+.vault-registers.is-final code { color: var(--vault-gold); }
+.vault-hash__formula { font: clamp(11px, 1.4vw, 17px)/1.8 monospace; color: #949487; }
+.vault-hash__result { display: flex; flex-direction: column; gap: 14px; transform: translateY(calc(var(--key-dock, 0) * 16px)); }
+.vault-hash__result span { font: 14px monospace; color: #999689; }
+.vault-hash__result code { font: clamp(13px, 1.7vw, 24px)/1.8 monospace; color: var(--vault-gold); overflow-wrap: anywhere; }
+.vault-key { position: absolute; inset-inline: 2%; bottom: 0; padding-top: 18px; border-top: 1px solid #5b5039; display: flex; flex-wrap: wrap; gap: 12px 22px; align-items: center; animation: vault-scene-in 600ms ease-out; }
+.vault-key span { font-size: 13px; color: #a8a392; }
+.vault-key code { font: clamp(11px, 1.45vw, 20px)/1.8 monospace; color: var(--vault-gold); overflow-wrap: anywhere; }
+.vault-message { padding: 1% 4% 72px; }
+.vault-message > p { color: #97968a; font: 14px monospace; margin: 0 0 20px; }
+.vault-message pre { white-space: pre-wrap; font: clamp(15px, 1.6vw, 23px)/1.5 monospace; color: #eee9db; margin: 0; }
+[data-message="place"] .vault-message pre { font-size: clamp(24px, 4.4vw, 64px); margin: 60px 0; }
+.vault-utf { display: flex; gap: 18px; margin-top: 24px; align-items: flex-start; }
+.vault-utf span { font: 12px monospace; color: #c8b280; }
+.vault-utf code { max-width: 800px; font: clamp(11px, 1.4vw, 18px)/1.7 monospace; color: #a19e90; overflow-wrap: anywhere; }
+.vault-encryption { padding: 3% 2% 85px; display: flex; flex-direction: column; justify-content: center; gap: 25px; }
+.vault-encryption__meta { display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; color: #b8b3a3; font: 13px monospace; }
+.vault-byte-row { position: relative; display: grid; grid-template-columns: 160px 1fr; align-items: end; gap: 10px 20px; }
+.vault-byte-row > span:first-child { grid-row: 1 / 3; align-self: center; color: #a8a596; font-size: 15px; }
+.vault-byte-row > code { grid-column: 2; min-height: 22px; color: #c6c1b2; font: 17px monospace; white-space: pre-wrap; }
+.vault-xor { grid-column: 2; color: var(--vault-gold); font: 25px monospace; }
+.vault-bytes { grid-column: 2; display: grid; grid-template-columns: repeat(16, 1fr); gap: 5px; }
+.vault-bytes span { padding: 10px 0; text-align: center; border-bottom: 1px solid #615941; color: #d4c8a8; font: clamp(13px, 1.7vw, 22px) monospace; }
+.vault-byte-row--output .vault-bytes span { color: #efe4c9; background: #29271f; }
+.vault-encryption > p { text-align: end; font: 12px monospace; color: #939084; }
+.vault-cipher { padding: 2% 4% 80px; }
+.vault-cipher > p { font: 14px monospace; color: #c1b38e; margin-bottom: 25px; }
+.vault-cipher pre { font: clamp(14px, 1.4vw, 22px)/1.5 monospace; white-space: pre-wrap; overflow-wrap: anywhere; color: #e1d5b7; }
+.vault-cipher dl { display: grid; grid-template-columns: 230px 1fr; gap: 12px; margin-top: 30px; font: 13px/1.6 monospace; }
+.vault-cipher dt { color: #928c7b; }
+.vault-cipher dd { margin: 0; color: #b6af9b; overflow-wrap: anywhere; }
+[data-exhibit="vault"] .vault { min-height: 0; padding: 18px clamp(20px, 4vw, 75px); }
+[data-exhibit="vault"] .vault-journey__stage { height: calc(100svh - var(--header-h) - 265px); min-height: 365px; }
+@media (max-width: 700px) {
+  .vault { padding: 14px; }
+  .vault-journey__head { margin-bottom: 14px; }
+  .vault-journey__heading { gap: 10px; }
+  .vault-journey__heading bdi { width: 100%; font-size: 12px; margin: 0; }
+  .vault-journey__help { font-size: 13px; min-height: 4.35em; line-height: 1.45; }
+  .vault-journey__stage { height: 540px; }
+  [data-exhibit="vault"] .vault-journey__stage { height: calc(100svh - var(--header-h) - 210px); min-height: 490px; }
+  .vault-selection img { height: 140px; }
+  .vault-selection figure { width: 32%; }
+  .vault-selection figcaption { font-size: 10px; }
+  .vault-hash { gap: 20px; padding: 0; }
+  .vault-hash__input code { font-size: 13px; word-spacing: 5px; }
+  .vault-hash__input span { font-size: 11px; line-height: 1.6; }
+  .vault-hash__operations { gap: 10px; flex-wrap: wrap; }
+  .vault-registers { grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .vault-registers > div { padding: 8px 0; gap: 6px; }
+  .vault-registers code { font-size: 13px; }
+  .vault-hash__result code { font-size: 13px; }
+  [data-phase="sampling"] .vault-geometry canvas { width: 100%; height: 55%; }
+  .vault-samples { top: 52%; width: 100%; padding: 8px 15px; border-inline-start: 0; }
+  .vault-samples pre { font-size: 13px; line-height: 1.6; }
+  .vault-samples p { font-size: 10px; margin-bottom: 8px; }
+  .vault-geometry__caption { font-size: 10px; }
+  .vault-message { padding: 20px 0 100px; }
+  .vault-message pre { font-size: 12px; line-height: 1.9; }
+  .vault-utf { flex-direction: column; gap: 8px; }
+  .vault-key { gap: 6px; }
+  .vault-key code { font-size: 11px; }
+  .vault-encryption { padding: 5px 0 100px; gap: 15px; }
+  .vault-encryption__meta { font-size: 10px; }
+  .vault-byte-row { grid-template-columns: 1fr; gap: 4px; }
+  .vault-byte-row > span:first-child { grid-row: auto; font-size: 12px; }
+  .vault-byte-row > code, .vault-xor, .vault-bytes { grid-column: 1; }
+  .vault-byte-row > code { font-size: 13px; min-height: 16px; }
+  .vault-bytes { gap: 3px; grid-template-columns: repeat(8, 1fr); }
+  .vault-bytes span { font-size: 13px; padding: 4px 0; }
+  .vault-xor { position: absolute; inset-inline-end: 0; top: -4px; font-size: 18px; }
+  .vault-encryption > p { font-size: 10px; }
+  .vault-cipher { padding: 25px 0 100px; }
+  .vault-cipher pre { font-size: 13px; }
+  .vault-cipher dl { grid-template-columns: 1fr; gap: 4px; font-size: 11px; margin-top: 15px; }
+  .vault-cipher dd { margin-bottom: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vault * { animation: none !important; transition: none !important; }
+}

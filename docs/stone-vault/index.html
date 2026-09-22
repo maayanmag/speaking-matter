@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="lang-en" data-exhibit="vault">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="description" content="Geological encryption: from a scanned stone through its surface measurements to an encryption key.">
+  <title>Geological Encryption - Speaking Matter</title>
+  <script>
+    if (new URLSearchParams(location.search).get('lang') === 'he') {
+      document.documentElement.lang = 'he';
+      document.documentElement.dir = 'rtl';
+      document.documentElement.className = 'lang-he';
+      document.title = 'הצפנה גאולוגית - דומם מדבר';
+    }
+  </script>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/tokens.css">
+  <link rel="stylesheet" href="./css/vault.css">
+  <link rel="stylesheet" href="./css/projection.css">
+</head>
+<body>
+  <a href="#vault" class="skip-link">
+    <span data-copy="en">Skip to exhibition</span>
+    <span data-copy="he">דלג לתצוגה</span>
+  </a>
+  <header class="site-header">
+    <a href="../" class="brand">
+      <span data-copy="en">Speaking Matter</span>
+      <span data-copy="he">דומם מדבר</span>
+    </a>
+    <button type="button" class="exhibit-button" id="exhibit-fullscreen" hidden>Fullscreen</button>
+    <div class="lang-toggle" role="group" aria-label="Language" dir="ltr">
+      <button type="button" data-lang="en" lang="en" aria-current="true">EN</button>
+      <span aria-hidden="true">/</span>
+      <button type="button" data-lang="he" lang="en">HE</button>
+    </div>
+  </header>
+  <p id="exhibit-status" role="status"></p>
+  <main>
+    <h1 class="visually-hidden">
+      <span data-copy="en">Geological encryption</span>
+      <span data-copy="he">הצפנה גאולוגית</span>
+    </h1>
+    <noscript><p class="no-script">Enable JavaScript to view the encryption sequence.
+      <span lang="he" dir="rtl">יש להפעיל JavaScript כדי לצפות בתהליך ההצפנה.</span></p></noscript>
+    <div class="vault" id="vault" tabindex="0">
+      <p><span data-copy="en">Loading scan data...</span><span data-copy="he">טעינת נתוני הסריקה...</span></p>
+    </div>
+  </main>
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>

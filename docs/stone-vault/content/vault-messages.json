@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "messages": [
+    {
+      "id": "value",
+      "stoneId": "Flint_JLM_03",
+      "text": "BASALT / 01\n12.480 BTC\n\n01 chalcedony   02 river\n03 copper       04 lantern\n05 desert       06 window\n07 orbit        08 meadow\n09 velvet       10 harbor\n11 fossil       12 echo",
+      "locales": {
+        "he": {
+          "title": "BASALT / 01"
+        },
+        "en": {
+          "title": "BASALT / 01"
+        }
+      }
+    },
+    {
+      "id": "access",
+      "stoneId": "flint_golan_heights_01",
+      "text": "passwords.txt\n# 1998-11-23\n\npostbox_personal: RiverWindow204!\npebble_bank:      copper-lantern_718$\nquarry_vpn:       FossilTrail#309\nshelter_alarm:    meadow.526!Gate\ncloud_attic:      Echo&Harbor841",
+      "locales": {
+        "he": {
+          "title": "passwords.txt"
+        },
+        "en": {
+          "title": "passwords.txt"
+        }
+      }
+    },
+    {
+      "id": "place",
+      "stoneId": "tal_al_ahmar",
+      "text": "31.417263,35.083941",
+      "locales": {
+        "he": {
+          "title": "coordinates.txt"
+        },
+        "en": {
+          "title": "coordinates.txt"
+        }
+      }
+    }
+  ]
+}
