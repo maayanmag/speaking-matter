@@ -14,9 +14,13 @@
     }
   </script>
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500;8..60,600;8..60,700&amp;family=Frank+Ruhl+Libre:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/fonts-local.css">
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/tokens.css">
-  <link rel="stylesheet" href="./css/stone-code.css">
+  <link rel="stylesheet" href="./css/stone-code.css?v=20260923-3">
 </head>
 <body>
   <a class="skip-link" href="#artwork" data-text="skip">Skip to artwork</a>
@@ -41,7 +45,6 @@
         <img id="code-image" src="./assets/stone-code.png" width="1768" height="3910"
              alt="Stone Code, Flint Golan 01: scan metadata, height values, symbols and row checksums">
       </div>
-      <p class="artwork__caption" data-text="caption">The complete image moves slowly through the frame.</p>
     </section>
     <aside class="legend" aria-labelledby="legend-title">
       <h2 id="legend-title" data-text="legend">Reading the image</h2>
@@ -54,7 +57,9 @@
         <div><dt dir="ltr">BITS</dt><dd data-text="bits">The row’s values are combined using XOR. Eight blocks show the resulting byte in binary.</dd></div>
       </dl>
       <button id="open-legend" class="legend__original" type="button">
-        <img id="legend-preview" src="./assets/legend.en.svg" width="2400" height="1460" alt="Reconstructed annotated Stone Code guide">
+        <span id="legend-preview" role="img" aria-label="Reconstructed annotated Stone Code guide">
+          <img src="./assets/legend.en.svg" width="2400" height="1460" alt="">
+        </span>
         <span data-text="original">Annotated guide - enlarge</span>
       </button>
     </aside>
@@ -67,8 +72,8 @@
       <button id="zoom" type="button" aria-pressed="false">100%</button>
       <button id="close" type="button" data-text="close">Close</button>
     </header>
-    <div class="dialog__scroll" tabindex="0"><img id="dialog-image" alt=""></div>
+    <div class="dialog__scroll" tabindex="0"><img id="dialog-image" alt=""><div id="dialog-guide" hidden></div></div>
   </dialog>
-  <script type="module" src="./js/main.js"></script>
+  <script type="module" src="./js/main.js?v=20260923-3"></script>
 </body>
 </html>

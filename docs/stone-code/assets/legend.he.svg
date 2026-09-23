@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1460" viewBox="0 0 2400 1460">
 <title>קוד האבן · Flint Golan 01</title>
-<desc>שחזור וקטורי על בסיס המקרא של מעיין מגנהיים. קטע הקוד נלקח מתמונת המקור.</desc>
+<desc>קוד האבן · Flint Golan 01</desc>
 <rect width="2400" height="1460" fill="#eeeeeb"/>
 <foreignObject x="350" y="45" width="1695" height="70">
       <div xmlns="http://www.w3.org/1999/xhtml" lang="he" dir="rtl"
-        style="font:26px/1.45 Arial, sans-serif;text-align:right;color:#242424">
+        style="font-size:26px;font-family:var(--f-serif-he, 'Abraham TRIAL', 'Frank Ruhl Libre', David, serif);line-height:1.45;text-align:right;color:#242424">
         <div style="font-weight:700;margin-bottom:10px">קוד האבן · Flint Golan 01</div>
         <div></div>
       </div></foreignObject>
@@ -25,44 +25,38 @@
 </g>
 <foreignObject x="365" y="168" width="835" height="180">
       <div xmlns="http://www.w3.org/1999/xhtml" lang="he" dir="rtl"
-        style="font:26px/1.45 Arial, sans-serif;text-align:right;color:#242424">
+        style="font-size:26px;font-family:var(--f-serif-he, 'Abraham TRIAL', 'Frank Ruhl Libre', David, serif);line-height:1.45;text-align:right;color:#242424">
         <div style="font-weight:700;margin-bottom:10px">נתונים טכניים</div>
         <div>קובץ המקור, מספר קודקודים ופאות, נתוני הגובה, אנטרופיה וטביעת SHA-256 של זרם נתוני הגובה.</div>
       </div></foreignObject>
 <foreignObject x="1300" y="135" width="746" height="220">
       <div xmlns="http://www.w3.org/1999/xhtml" lang="he" dir="rtl"
-        style="font:26px/1.45 Arial, sans-serif;text-align:right;color:#242424">
+        style="font-size:26px;font-family:var(--f-serif-he, 'Abraham TRIAL', 'Frank Ruhl Libre', David, serif);line-height:1.45;text-align:right;color:#242424">
         <div style="font-weight:700;margin-bottom:10px">הקס · HEX</div>
         <div>הגבהים המנורמלים (0–1) מוכפלים ב־255 ונשמרים כבתים. כל בית נכתב בשתי ספרות הקסדצימליות: 00–FF. ירוק בהיר יותר מציין גובה גדול יותר.</div>
       </div></foreignObject>
 <foreignObject x="35" y="568" width="268" height="235">
       <div xmlns="http://www.w3.org/1999/xhtml" lang="he" dir="rtl"
-        style="font:26px/1.45 Arial, sans-serif;text-align:right;color:#242424">
+        style="font-size:26px;font-family:var(--f-serif-he, 'Abraham TRIAL', 'Frank Ruhl Libre', David, serif);line-height:1.45;text-align:right;color:#242424">
         <div style="font-weight:700;margin-bottom:10px">אופסט · OFFSET</div>
         <div>האינדקס של הבית הראשון בכל שורה בתוך זרם הנתונים. המיקום נכתב בספירה הקסדצימלית.</div>
       </div></foreignObject>
 <foreignObject x="35" y="844" width="268" height="355">
       <div xmlns="http://www.w3.org/1999/xhtml" lang="he" dir="rtl"
-        style="font:26px/1.45 Arial, sans-serif;text-align:right;color:#242424">
+        style="font-size:26px;font-family:var(--f-serif-he, 'Abraham TRIAL', 'Frank Ruhl Libre', David, serif);line-height:1.45;text-align:right;color:#242424">
         <div style="font-weight:700;margin-bottom:10px">מה מייצגת שורה?</div>
         <div>דגימות הגובה התקפות מסודרות ברצף אחד, המחולק לשורות של 48 בתים לצורכי תצוגה. השורה אינה מתארת את קו המתאר של האבן.</div>
       </div></foreignObject>
 <foreignObject x="2082" y="682" width="280" height="390">
       <div xmlns="http://www.w3.org/1999/xhtml" lang="he" dir="rtl"
-        style="font:26px/1.45 Arial, sans-serif;text-align:right;color:#242424">
+        style="font-size:26px;font-family:var(--f-serif-he, 'Abraham TRIAL', 'Frank Ruhl Libre', David, serif);line-height:1.45;text-align:right;color:#242424">
         <div style="font-weight:700;margin-bottom:10px">ביטים · BITS</div>
         <div>פעולת XOR משלבת את בתי השורה לבית אחד. שמונת הביטים שלו מוצגים כבלוקים; בלוק מואר מייצג 1. הבהירות משתנה לפי הערך שהתקבל.</div>
       </div></foreignObject>
 <foreignObject x="1210" y="1212" width="835" height="170">
       <div xmlns="http://www.w3.org/1999/xhtml" lang="he" dir="rtl"
-        style="font:26px/1.45 Arial, sans-serif;text-align:right;color:#242424">
+        style="font-size:26px;font-family:var(--f-serif-he, 'Abraham TRIAL', 'Frank Ruhl Libre', David, serif);line-height:1.45;text-align:right;color:#242424">
         <div style="font-weight:700;margin-bottom:10px">סמלים · DECODED / SYMBOL</div>
         <div>כל בית מוצג גם כסמל חזותי. הסמלים הם ייצוג נוסף של המספרים, ולא פענוח של מסר סודי.</div>
-      </div></foreignObject>
-<foreignObject x="350" y="1390" width="1700" height="65">
-      <div xmlns="http://www.w3.org/1999/xhtml" lang="he" dir="rtl"
-        style="font:19px/1.45 Arial, sans-serif;text-align:right;color:#242424">
-        <div style="font-weight:700;margin-bottom:10px"></div>
-        <div>שחזור וקטורי על בסיס המקרא של מעיין מגנהיים. קטע הקוד נלקח מתמונת המקור.</div>
       </div></foreignObject>
 </svg>

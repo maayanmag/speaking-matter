@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1460" viewBox="0 0 2400 1460">
 <title>Stone Code · Flint Golan 01</title>
-<desc>Vector reconstruction based on Maayan Magenheim’s annotated guide. The code excerpt comes from the original image.</desc>
+<desc>Stone Code · Flint Golan 01</desc>
 <rect width="2400" height="1460" fill="#eeeeeb"/>
 <foreignObject x="350" y="45" width="1695" height="70">
       <div xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr"
-        style="font:26px/1.45 Arial, sans-serif;text-align:left;color:#242424">
+        style="font-size:26px;font-family:var(--f-serif, 'Source Serif 4', Georgia, serif);line-height:1.45;text-align:left;color:#242424">
         <div style="font-weight:700;margin-bottom:10px">Stone Code · Flint Golan 01</div>
         <div></div>
       </div></foreignObject>
@@ -25,44 +25,38 @@
 </g>
 <foreignObject x="365" y="168" width="835" height="180">
       <div xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr"
-        style="font:26px/1.45 Arial, sans-serif;text-align:left;color:#242424">
+        style="font-size:26px;font-family:var(--f-serif, 'Source Serif 4', Georgia, serif);line-height:1.45;text-align:left;color:#242424">
         <div style="font-weight:700;margin-bottom:10px">Technical data</div>
         <div>Source file, number of vertices and faces, height statistics, entropy and a SHA-256 fingerprint of the height-data stream.</div>
       </div></foreignObject>
 <foreignObject x="1300" y="135" width="746" height="220">
       <div xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr"
-        style="font:26px/1.45 Arial, sans-serif;text-align:left;color:#242424">
+        style="font-size:26px;font-family:var(--f-serif, 'Source Serif 4', Georgia, serif);line-height:1.45;text-align:left;color:#242424">
         <div style="font-weight:700;margin-bottom:10px">HEX · height values</div>
         <div>Normalized heights (0–1) are multiplied by 255 and stored as bytes. Each byte is written as two hexadecimal digits: 00–FF. Brighter green represents greater height.</div>
       </div></foreignObject>
 <foreignObject x="35" y="568" width="268" height="235">
       <div xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr"
-        style="font:26px/1.45 Arial, sans-serif;text-align:left;color:#242424">
+        style="font-size:26px;font-family:var(--f-serif, 'Source Serif 4', Georgia, serif);line-height:1.45;text-align:left;color:#242424">
         <div style="font-weight:700;margin-bottom:10px">OFFSET</div>
         <div>The index of the first byte in each row. These positions are written in hexadecimal.</div>
       </div></foreignObject>
 <foreignObject x="35" y="844" width="268" height="355">
       <div xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr"
-        style="font:26px/1.45 Arial, sans-serif;text-align:left;color:#242424">
+        style="font-size:26px;font-family:var(--f-serif, 'Source Serif 4', Georgia, serif);line-height:1.45;text-align:left;color:#242424">
         <div style="font-weight:700;margin-bottom:10px">Each row</div>
         <div>Valid height samples are arranged as one continuous stream, then divided into rows of 48 bytes for display. A row is not a contour of the stone.</div>
       </div></foreignObject>
 <foreignObject x="2082" y="682" width="280" height="390">
       <div xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr"
-        style="font:26px/1.45 Arial, sans-serif;text-align:left;color:#242424">
+        style="font-size:26px;font-family:var(--f-serif, 'Source Serif 4', Georgia, serif);line-height:1.45;text-align:left;color:#242424">
         <div style="font-weight:700;margin-bottom:10px">BITS</div>
         <div>XOR combines the bytes in a row into one byte. Its eight bits are shown as blocks; lit blocks represent 1. Brightness varies with the resulting value.</div>
       </div></foreignObject>
 <foreignObject x="1210" y="1212" width="835" height="170">
       <div xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr"
-        style="font:26px/1.45 Arial, sans-serif;text-align:left;color:#242424">
+        style="font-size:26px;font-family:var(--f-serif, 'Source Serif 4', Georgia, serif);line-height:1.45;text-align:left;color:#242424">
         <div style="font-weight:700;margin-bottom:10px">DECODED / SYMBOL</div>
         <div>Each byte is also mapped to a visual symbol. The symbols are another representation of the numbers, not a decoded secret.</div>
-      </div></foreignObject>
-<foreignObject x="350" y="1390" width="1700" height="65">
-      <div xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr"
-        style="font:19px/1.45 Arial, sans-serif;text-align:left;color:#242424">
-        <div style="font-weight:700;margin-bottom:10px"></div>
-        <div>Vector reconstruction based on Maayan Magenheim’s annotated guide. The code excerpt comes from the original image.</div>
       </div></foreignObject>
 </svg>

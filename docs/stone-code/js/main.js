@@ -3,7 +3,6 @@ const COPY = {
     title: 'Stone Code', brand: 'Speaking Matter', skip: 'Skip to artwork',
     whole: 'Whole image', detail: 'Moving detail', pause: 'Pause', play: 'Play',
     fullscreen: 'Fullscreen', exit: 'Exit fullscreen', enlarge: 'Enlarge image',
-    caption: 'The complete image moves slowly through the frame.', still: 'Complete image.',
     legend: 'Reading the image', metaTitle: 'Header',
     meta: 'Source file, mesh size, height statistics and a SHA-256 fingerprint of the data.',
     offset: 'The position of the first byte in this row, written in hexadecimal.',
@@ -20,7 +19,6 @@ const COPY = {
     title: 'קוד האבן', brand: 'דומם מדבר', skip: 'דלג לתמונה',
     whole: 'התמונה המלאה', detail: 'תצוגה נעה', pause: 'השהיה', play: 'המשך',
     fullscreen: 'מסך מלא', exit: 'יציאה ממסך מלא', enlarge: 'הגדלת התמונה',
-    caption: 'התמונה המלאה עוברת באיטיות במסגרת התצוגה.', still: 'התמונה המלאה.',
     legend: 'מקרא', metaTitle: 'הכותרת',
     meta: 'קובץ המקור, גודל הרשת, נתוני הגובה וטביעת SHA-256 של הנתונים.',
     offset: 'המיקום של הבית הראשון בשורה בתוך רצף הנתונים, בכתיב הקסדצימלי.',
@@ -42,6 +40,10 @@ const pause = document.getElementById('pause');
 const fullscreen = document.getElementById('fullscreen');
 const dialog = document.getElementById('image-dialog');
 const dialogImage = document.getElementById('dialog-image');
+const dialogGuide = document.getElementById('dialog-guide');
+const legendPreview = document.getElementById('legend-preview');
+const legendCache = new Map();
+let renderedLegendLocale = null;
 const reduced = matchMedia('(prefers-reduced-motion: reduce)');
 let locale = new URLSearchParams(location.search).get('lang') === 'he' ? 'he' : 'en';
 let whole = reduced.matches, paused = false, offset = 0, direction = 1, hold = 8, previous = null;
@@ -63,17 +65,40 @@ function labels() {
   pause.setAttribute('aria-pressed', String(paused));
   pause.hidden = whole;
   fullscreen.textContent = document.fullscreenElement ? copy().exit : copy().fullscreen;
-  document.querySelector('.artwork__caption').textContent = whole ? copy().still : copy().caption;
   document.getElementById('status').textContent = errorKey ? copy()[errorKey] : '';
   document.getElementById('dialog-title').textContent = dialogKind === 'legend' ? copy().guideTitle : `${copy().title} · Flint Golan 01`;
   document.getElementById('zoom').textContent = dialog.classList.contains('is-native') ? copy().fit : '100%';
-  const preview = document.getElementById('legend-preview');
-  const legendPath = `./assets/legend.${locale}.svg`;
-  if (preview.getAttribute('src') !== legendPath) preview.src = legendPath;
-  preview.alt = copy().guideTitle;
-  if (dialog.open && dialogKind === 'legend' && dialogImage.getAttribute('src') !== legendPath) {
-    dialogImage.src = legendPath;
-    dialogImage.alt = copy().guideTitle;
+  legendPreview.setAttribute('aria-label', copy().guideTitle);
+  if (renderedLegendLocale !== locale) void renderLegend(locale);
+}
+async function renderLegend(language) {
+  try {
+    if (!legendCache.has(language)) {
+      const request = fetch(`./assets/legend.${language}.svg?v=20260923-3`)
+        .then(async response => {
+          if (!response.ok) throw new Error(`Legend HTTP ${response.status}`);
+          const document = new DOMParser().parseFromString(await response.text(), 'image/svg+xml');
+          if (document.querySelector('parsererror') || document.documentElement.localName !== 'svg') {
+            throw new Error('Invalid legend SVG');
+          }
+          return document.documentElement;
+        });
+      legendCache.set(language, request);
+    }
+    const svg = await legendCache.get(language);
+    if (language !== locale || disposed) return;
+    // Inline SVG uses the page's font faces, unlike an SVG loaded as an image.
+    legendPreview.replaceChildren(document.importNode(svg, true));
+    dialogGuide.replaceChildren(document.importNode(svg, true));
+    renderedLegendLocale = language;
+    legendPreview.dataset.locale = language;
+    dialogGuide.dataset.locale = language;
+  } catch (error) {
+    legendCache.delete(language);
+    if (language !== locale || disposed) return;
+    console.error('[legend]', error);
+    errorKey = 'imageError';
+    document.getElementById('status').textContent = copy().imageError;
   }
 }
 function draw() { image.style.transform = `translateY(${-offset}px)`; }
@@ -107,8 +132,12 @@ function showImage(kind) {
   dialogKind = kind;
   dialog.classList.remove('is-native');
   document.getElementById('zoom').setAttribute('aria-pressed', 'false');
-  dialogImage.src = kind === 'legend' ? `./assets/legend.${locale}.svg` : './assets/stone-code.png';
-  dialogImage.alt = kind === 'legend' ? copy().guideTitle : `${copy().title} · Flint Golan 01`;
+  dialogImage.hidden = kind === 'legend';
+  dialogGuide.hidden = kind !== 'legend';
+  if (kind === 'code') {
+    dialogImage.src = './assets/stone-code.png';
+    dialogImage.alt = `${copy().title} · Flint Golan 01`;
+  }
   labels();
   dialog.showModal();
   sync();
