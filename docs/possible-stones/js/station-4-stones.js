@@ -4,6 +4,7 @@ import { createExhibitClock } from './exhibit-clock.js';
 const POSTER_SECONDS = 10;
 const LOAD_TIMEOUT_SECONDS = 30;
 const FAILURE_SECONDS = 3;
+const MEDIA_VERSION = 'motion-20260923-2';
 // Collection labels retain their registered spelling in both interface languages.
 const COLLECTION = {
   scoria: 'Scoria Golan Hights',
@@ -268,10 +269,10 @@ export function initStation4() {
       if (buffered.length) progress.style.width = `${Math.min(100, buffered.end(buffered.length - 1) / slot.video.duration * 100)}%`;
     }, options);
     const path = `./assets/video/stones/${STONES[index].id}`;
-    slot.poster.src = `${path}.jpg`;
-    slot.video.poster = `${path}.jpg`;
+    slot.poster.src = `${path}.jpg?v=${MEDIA_VERSION}`;
+    slot.video.poster = `${path}.jpg?v=${MEDIA_VERSION}`;
     if (!reduced.matches) {
-      slot.video.src = `${path}.mp4`;
+      slot.video.src = `${path}.mp4?v=${MEDIA_VERSION}`;
       slot.video.load();
     }
   }

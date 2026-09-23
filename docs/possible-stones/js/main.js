@@ -44,7 +44,7 @@ if (document.fullscreenEnabled && document.documentElement.requestFullscreen) {
 }
 
 try {
-  const { initStation4 } = await import('./station-4-stones.js');
+  const { initStation4 } = await import('./station-4-stones.js?v=motion-20260923-2');
   initStation4();
 } catch {
   errorKey = 'startupError';
