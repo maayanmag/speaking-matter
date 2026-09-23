@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="lang-en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="description" content="Stone Code - Flint Golan 01, with a guide to reading the scan-derived data.">
+  <title>Stone Code - Speaking Matter</title>
+  <script>
+    if (new URLSearchParams(location.search).get('lang') === 'he') {
+      document.documentElement.lang = 'he';
+      document.documentElement.dir = 'rtl';
+      document.documentElement.className = 'lang-he';
+    }
+  </script>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/tokens.css">
+  <link rel="stylesheet" href="./css/stone-code.css">
+</head>
+<body>
+  <a class="skip-link" href="#artwork" data-text="skip">Skip to artwork</a>
+  <header class="site-header">
+    <a class="brand" href="../" data-text="brand">Speaking Matter</a>
+    <h1 data-text="title">Stone Code</h1>
+    <span class="specimen" lang="en" dir="ltr">Flint Golan 01</span>
+    <div class="operator-controls">
+      <button id="mode" type="button" aria-pressed="false" data-text="whole">Whole image</button>
+      <button id="pause" type="button" aria-pressed="false" data-text="pause">Pause</button>
+      <button id="fullscreen" type="button" hidden data-text="fullscreen">Fullscreen</button>
+      <div class="lang-toggle" role="group" aria-label="Language" dir="ltr">
+        <button data-lang="en" type="button" aria-current="true" lang="en">EN</button>
+        <button data-lang="he" type="button" aria-current="false" lang="en">HE</button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="artwork" id="artwork" tabindex="0" aria-label="Stone Code image">
+      <button class="artwork__open" id="open-code" type="button" data-text="enlarge">Enlarge image</button>
+      <div class="artwork__viewport" id="viewport">
+        <img id="code-image" src="./assets/stone-code.png" width="1768" height="3910"
+             alt="Stone Code, Flint Golan 01: scan metadata, height values, symbols and row checksums">
+      </div>
+      <p class="artwork__caption" data-text="caption">The complete image moves slowly through the frame.</p>
+    </section>
+    <aside class="legend" aria-labelledby="legend-title">
+      <h2 id="legend-title" data-text="legend">Reading the image</h2>
+      <dl>
+        <div><dt data-text="metaTitle">Header</dt><dd data-text="meta">Source file, mesh size, height statistics and a SHA-256 fingerprint of the data.</dd></div>
+        <div><dt dir="ltr">OFFSET</dt><dd data-text="offset">The position of the first byte in this row, written in hexadecimal.</dd></div>
+        <div><dt dir="ltr">HEX</dt><dd data-text="hex">Each height is scaled to 0–255 and written as two hexadecimal digits, 00–FF. Brighter green means greater height.</dd></div>
+        <div><dt data-text="rowTitle">Each row</dt><dd data-text="row">48 successive height samples. Line breaks organize the display; they are not the stone’s outline.</dd></div>
+        <div><dt dir="ltr">DECODED / SYMBOL</dt><dd data-text="symbols">The same bytes mapped to visual symbols. This is a second representation, not a decrypted message.</dd></div>
+        <div><dt dir="ltr">BITS</dt><dd data-text="bits">The row’s values are combined using XOR. Eight blocks show the resulting byte in binary.</dd></div>
+      </dl>
+      <button id="open-legend" class="legend__original" type="button">
+        <img id="legend-preview" src="./assets/legend.en.svg" width="2400" height="1460" alt="Reconstructed annotated Stone Code guide">
+        <span data-text="original">Annotated guide - enlarge</span>
+      </button>
+    </aside>
+  </main>
+  <p id="status" role="status"></p>
+  <noscript><p class="no-script">Enable JavaScript for automatic panning and image enlargement. The artwork and guide remain available below.</p></noscript>
+  <dialog id="image-dialog" aria-labelledby="dialog-title">
+    <header class="dialog__header">
+      <h2 id="dialog-title"></h2>
+      <button id="zoom" type="button" aria-pressed="false">100%</button>
+      <button id="close" type="button" data-text="close">Close</button>
+    </header>
+    <div class="dialog__scroll" tabindex="0"><img id="dialog-image" alt=""></div>
+  </dialog>
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>
